@@ -29,7 +29,6 @@ public class JniStdioTest {
 
 
     static {
-        System.out.println(System.getProperty("java.library.path"));
         System.loadLibrary("jnic-0.1-SNAPSHOT");
     }
 
