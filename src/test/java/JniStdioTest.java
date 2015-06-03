@@ -34,7 +34,34 @@ public class JniStdioTest {
     }
 
 
-    @Test
+    @Test(enabled = true)
+    public static void _IOFBF() {
+
+        final Logger logger = getLogger(lookup().lookupClass());
+
+        logger.debug("_IOFBF: {}", JniStdio._IOFBF);
+    }
+
+
+    @Test(enabled = true)
+    public static void _IOLBF() {
+
+        final Logger logger = getLogger(lookup().lookupClass());
+
+        logger.debug("_IOLBF: {}", JniStdio._IOLBF);
+    }
+
+
+    @Test(enabled = true)
+    public static void _IONBF() {
+
+        final Logger logger = getLogger(lookup().lookupClass());
+
+        logger.debug("_IONBF: {}", JniStdio._IONBF);
+    }
+
+
+    @Test(enabled = true)
     public static void BUFSIZ() {
 
         final Logger logger = getLogger(lookup().lookupClass());
@@ -43,16 +70,16 @@ public class JniStdioTest {
     }
 
 
-    @Test
+    @Test(enabled = true)
     public static void EOF() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("EOF: {}", JniStdio.EOF);
+        logger.debug("EOF: {}", JniStdio.EOF());
     }
 
 
-    @Test
+    @Test(enabled = true)
     public static void FILENAME_MAX() {
 
         final Logger logger = getLogger(lookup().lookupClass());
@@ -61,7 +88,7 @@ public class JniStdioTest {
     }
 
 
-    @Test
+    @Test(enabled = true)
     public static void FOPEN_MAX() {
 
         final Logger logger = getLogger(lookup().lookupClass());
@@ -70,7 +97,34 @@ public class JniStdioTest {
     }
 
 
-    @Test
+    @Test(enabled = true)
+    public static void SEEK_SET() {
+
+        final Logger logger = getLogger(lookup().lookupClass());
+
+        logger.debug("SEEK_SET: {}", JniStdio.SEEK_SET);
+    }
+
+
+    @Test(enabled = true)
+    public static void SEEK_CUR() {
+
+        final Logger logger = getLogger(lookup().lookupClass());
+
+        logger.debug("SEEK_CUR: {}", JniStdio.SEEK_CUR);
+    }
+
+
+    @Test(enabled = true)
+    public static void SEEK_END() {
+
+        final Logger logger = getLogger(lookup().lookupClass());
+
+        logger.debug("SEEK_END: {}", JniStdio.SEEK_END);
+    }
+
+
+    @Test(enabled = true)
     public static void puts() {
 
         final byte[] src = new byte[]{0x40, 0x41, 0x00};
