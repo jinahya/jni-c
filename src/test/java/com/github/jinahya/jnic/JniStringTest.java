@@ -1,10 +1,3 @@
-
-
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
-import org.testng.annotations.Test;
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;jinahya_at_gmail.com&gt;.
  *
@@ -20,16 +13,21 @@ import org.testng.annotations.Test;
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
+
+package com.github.jinahya.jnic;
+
+
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+import org.testng.annotations.Test;
+
+
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class JniStringTest {
-
-
-    static {
-        System.loadLibrary("jnic-0.1-SNAPSHOT");
-    }
+public class JniStringTest extends JniTest {
 
 
     @Test

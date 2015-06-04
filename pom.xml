@@ -35,6 +35,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.scijava</groupId>
+      <artifactId>native-lib-loader</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>6.9.4</version>
@@ -48,8 +53,6 @@
     <maven.compiler.target>1.6</maven.compiler.target>
     <maven.compiler.testSource>1.8</maven.compiler.testSource>
     <maven.compiler.testTarget>1.8</maven.compiler.testTarget>
-    <project.build.outputDirectory.retrotranslated13>${project.build.directory}/classes-retrotranslated13</project.build.outputDirectory.retrotranslated13>
-    <project.build.outputDirectory.retrotranslated14>${project.build.directory}/classes-retrotranslated14</project.build.outputDirectory.retrotranslated14>
   </properties>
 
   <!-- Build Settings -->
@@ -182,11 +185,6 @@
         <artifactId>nar-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <!--
-          <c>
-            <option>-std=c99</option>
-          </c>
-          -->
           <libraries>
             <library>
               <type>jni</type>
@@ -275,13 +273,6 @@
       <distribution>repo</distribution>
       <comments>A business-friendly OSS license</comments>
     </license>
-    <!--
-    <license>
-      <name>GNU Lesser General Public License</name>
-      <url>http://www.gnu.org/licenses/lgpl-3.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-    -->
   </licenses>
   <organization />
   <developers>

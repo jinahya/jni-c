@@ -15,6 +15,10 @@
  */
 
 
+package com.github.jinahya.jnic;
+
+
+import com.github.jinahya.jnic.JniTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -25,12 +29,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class JniStdioTest {
-
-
-    static {
-        System.loadLibrary("jnic-0.1-SNAPSHOT");
-    }
+public class JniStdioTest extends JniTest {
 
 
     @Test(enabled = true)

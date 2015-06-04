@@ -1,11 +1,11 @@
 #include <jni.h>
-#include "JniString.h"
+#include "com_github_jinahya_jnic_JniString.h"
 #include <string.h>
-//#include <stdio.h>
 
-JNIEXPORT jbyteArray JNICALL Java_JniString_strcat(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
-  if (dst == NULL) return dst;
-  if (src == NULL) return dst;
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniString_strcat(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
+  //if (dst == NULL) return dst;
+  //if (src == NULL) return dst;
+  if (dst == NULL || src == NULL) return dst;
   jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
   jbyte *s = (*env)->GetByteArrayElements(env, src, NULL);
   if (d != NULL && s != NULL) strcat((char *) d, (const char *) s);
@@ -14,9 +14,10 @@ JNIEXPORT jbyteArray JNICALL Java_JniString_strcat(JNIEnv *env, jclass cls, jbyt
   return dst;
 }
 
-JNIEXPORT jbyteArray JNICALL Java_JniString_strcpy(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
-  if (dst == NULL) return dst;
-  if (src == NULL) return dst;
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniString_strcpy(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
+  //if (dst == NULL) return dst;
+  //if (src == NULL) return dst;
+  if (dst == NULL || src == NULL) return dst;
   jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
   jbyte *s = (*env)->GetByteArrayElements(env, src, NULL);
   if (d != NULL && s != NULL) strcpy((char *) d, (const char *) s);

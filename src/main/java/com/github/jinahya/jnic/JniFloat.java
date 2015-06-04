@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Jin Kwon &lt;jinahya_at_gmail.com&gt;.
+ * Copyright 2015 Jin Kwon &lt;onacit at gmail.com&gt;.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -15,21 +15,21 @@
  */
 
 
-import org.testng.annotations.BeforeSuite;
+package com.github.jinahya.jnic;
 
 
 /**
  *
- * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
+ * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniTest {
+public class JniFloat {
 
 
-    @BeforeSuite
-    public static void loadLibrary() {
-        System.out.println(System.getProperty("java.library.path"));
-        System.loadLibrary("jnic-0.1-SNAPSHOT");
-    }
+    // --------------------------------------------------------------- FLT_RADIX
+    static native int FLT_RADIX();
+
+
+    public static final int FLT_RADIX = FLT_RADIX();
 
 
 }

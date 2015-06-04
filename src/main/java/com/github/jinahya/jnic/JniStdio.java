@@ -1,8 +1,3 @@
-
-
-import java.io.FileDescriptor;
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;jinahya_at_gmail.com&gt;.
  *
@@ -18,6 +13,14 @@ import java.io.FileDescriptor;
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+
+
+package com.github.jinahya.jnic;
+
+
+import java.io.FileDescriptor;
+
+
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;

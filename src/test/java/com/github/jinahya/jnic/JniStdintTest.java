@@ -15,6 +15,10 @@
  */
 
 
+package com.github.jinahya.jnic;
+
+
+import com.github.jinahya.jnic.JniTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
@@ -26,12 +30,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniStdintTest {
-
-
-    static {
-        System.loadLibrary(JnicTests.LIB_NAME);
-    }
+public class JniStdintTest extends JniTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());

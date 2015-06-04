@@ -1,8 +1,5 @@
 
 
-import java.math.BigInteger;
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;onacit at gmail.com&gt;.
  *
@@ -18,6 +15,12 @@ import java.math.BigInteger;
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+package com.github.jinahya.jnic;
+
+
+import java.math.BigInteger;
+
+
 /**
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
@@ -81,7 +84,7 @@ public class JniStdint {
      * @return the value of {@code SIZE_MAX} or {@code null} if failed to read
      */
     static BigInteger SIZE_MAX() {
-        final byte[] bytes = new byte[9];
+        final byte[] bytes = new byte[8 * 1 + 1];
         return SIZE_MAX(bytes) ? new BigInteger(bytes) : null;
     }
 
@@ -138,13 +141,13 @@ public class JniStdint {
     static native long WINT_MIN();
 
 
-    public static final long WINT_MIN = WINT_MIN();
+    public static final long WINT_MIN = WINT_MIN(); // wint_t
 
 
     static native long WINT_MAX();
 
 
-    public static final long WINT_MAX = WINT_MAX();
+    public static final long WINT_MAX = WINT_MAX(); // wint_t
 
 
 }
