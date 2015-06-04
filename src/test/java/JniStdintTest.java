@@ -61,5 +61,41 @@ public class JniStdintTest {
     }
 
 
+    @Test
+    public static void SIG_ATOMIC_MIN() {
+        logger.debug("SIG_ATOMIC_MIN: {}", JniStdint.SIG_ATOMIC_MIN);
+    }
+
+
+    @Test
+    public static void SIG_ATOMIC_MAX() {
+        logger.debug("SIG_ATOMIC_MAX: {}", JniStdint.SIG_ATOMIC_MAX);
+    }
+
+
+    @Test
+    public static void WCHAR_MIN() {
+        logger.debug("WCHAR_MIN: {}", JniStdint.WCHAR_MIN);
+    }
+
+
+    @Test
+    public static void WCHAR_MAX() {
+        logger.debug("WCHAR_MAX: {}", JniStdint.WCHAR_MAX);
+    }
+
+
+    @Test
+    public static void WINT_MIN() {
+        logger.debug("WINT_MIN: {}", JniStdint.WINT_MIN);
+    }
+
+
+    @Test
+    public static void WINT_MAX() {
+        logger.debug("WINT_MAX: {}", JniStdint.WINT_MAX);
+    }
+
+
 }
 

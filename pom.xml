@@ -182,6 +182,11 @@
         <artifactId>nar-maven-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
+          <!--
+          <c>
+            <option>-std=c99</option>
+          </c>
+          -->
           <libraries>
             <library>
               <type>jni</type>

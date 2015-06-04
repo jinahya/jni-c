@@ -12,18 +12,41 @@ JNIEXPORT jlong JNICALL Java_JniStdint_PTRDIFF_1MAX(JNIEnv *env, jclass cls) {
   return PTRDIFF_MAX;
 }
 
-JNIEXPORT void JNICALL Java_JniStdint_SIZE_1MAX(JNIEnv *env, jclass cls, jbyteArray dst) {
-
-  jbyte *b = (*env)->GetByteArrayElements(env, dst, NULL);
-  unsigned long long int x = SIZE_MAX;
-  printf("x: %llu\n", x);
-  char *a = (char *) &x;
-  printf("%p %d\n", a, *a);
-  int i;
-  for (i = 0; i < 8; i++) {
-    b[i] = *(a + i);
-    printf("%d\n", *(a + i));
-    printf("b[%d]: %d\n", i, b[i]);
+JNIEXPORT jboolean JNICALL Java_JniStdint_SIZE_1MAX(JNIEnv *env, jclass cls, jbyteArray dst) {
+  jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
+  if (d == NULL) {
+    return JNI_FALSE;
   }
-  (*env)->ReleaseByteArrayElements(env, dst, b, 0);
+  unsigned long long int size_max = SIZE_MAX;
+  int i;
+  for (i = (*env)->GetArrayLength(env, dst) - 1; i >= 0; i--) {
+    d[i] = (char) (size_max & 0xFF);
+    size_max >>= 8;
+  }
+  (*env)->ReleaseByteArrayElements(env, dst, d, 0);
+  return JNI_TRUE;
+}
+
+JNIEXPORT jint JNICALL Java_JniStdint_SIG_1ATOMIC_1MIN(JNIEnv *env, jclass cls) {
+  return SIG_ATOMIC_MIN;
+}
+
+JNIEXPORT jint JNICALL Java_JniStdint_SIG_1ATOMIC_1MAX(JNIEnv *env, jclass cls) {
+  return SIG_ATOMIC_MAX;
+}
+
+JNIEXPORT jint JNICALL Java_JniStdint_WCHAR_1MIN(JNIEnv *env, jclass cls) {
+  return WCHAR_MIN;
+}
+
+JNIEXPORT jint JNICALL Java_JniStdint_WCHAR_1MAX(JNIEnv *env, jclass cls) {
+  return WCHAR_MAX;
+}
+
+JNIEXPORT jlong JNICALL Java_JniStdint_WINT_1MIN(JNIEnv *env, jclass cls) {
+  return WINT_MIN;
+}
+
+JNIEXPORT jlong JNICALL Java_JniStdint_WINT_1MAX(JNIEnv *env, jclass cls) {
+  return WINT_MAX;
 }
