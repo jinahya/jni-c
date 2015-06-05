@@ -54,9 +54,13 @@ public class JniStdintTest extends JniTest {
     }
 
 
+    // ---------------------------------------------------------------- SIZE_MAX
     @Test
     public static void SIZE_MAX() {
+
         logger.debug("SIZE_MAX: {}", JniStdint.SIZE_MAX);
+        assertTrue(JniStdint.SIZE_MAX == null
+                   || JniStdint.SIZE_MAX.signum() == 1);
     }
 
 

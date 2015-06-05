@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
 public class JniStringTest extends JniTest {
 
 
-    @Test
+    @Test(enabled = true)
     public static void strcat() {
 
         final byte[] dst = new byte[]{0x41, 0x42, 0x00, 0x00, 0x00};
@@ -44,7 +44,7 @@ public class JniStringTest extends JniTest {
     }
 
 
-    @Test
+    @Test(enabled = true)
     public static void strcpy() {
 
         final byte[] dst = new byte[]{0x41, 0x42, 0x00};

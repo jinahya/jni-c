@@ -13,20 +13,25 @@ JNIEXPORT jlong JNICALL Java_com_github_jinahya_jnic_JniStdint_PTRDIFF_1MAX(JNIE
   return PTRDIFF_MAX;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniStdint_SIZE_1MAX(JNIEnv *env, jclass cls, jbyteArray dst) {
-  jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
-  if (d == NULL) {
-    return JNI_FALSE;
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniStdint_SIZE_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+#if !defined (SIZE_MAX)
+  return null;
+#endif
+  const size_t size = sizeof (unsigned long long int);
+  jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
+  if (result != NULL) {
+    jbyte * cbytes = (*env)->GetByteArrayElements(env, result, NULL);
+    if (cbytes != NULL) {
+      unsigned long long int value = SIZE_MAX;
+      int i;
+      for (i = (int) (size - 1); i >= 0; i--) {
+        cbytes[i] = (jbyte) (value & 0xFF);
+        value >>= 8;
+      }
+      (*env)->ReleaseByteArrayElements(env, result, cbytes, 0);
+    }
   }
-  //  unsigned long long int size_max = SIZE_MAX;
-  //  int i;
-  //  for (i = (*env)->GetArrayLength(env, dst) - 1; i >= 0; i--) {
-  //    d[i] = (char) (size_max & 0xFF);
-  //    size_max >>= 8;
-  //  }
-  ull2ca(SIZE_MAX, (char *) d, (*env)->GetArrayLength(env, dst));
-  (*env)->ReleaseByteArrayElements(env, dst, d, 0);
-  return JNI_TRUE;
+  return result;
 }
 
 JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdint_SIG_1ATOMIC_1MIN(JNIEnv *env, jclass cls) {

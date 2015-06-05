@@ -28,9 +28,6 @@ import java.math.BigInteger;
 public class JniStdint {
 
 
-    public static final long PTRDIFF_MIN;
-
-
     /**
      * Reads the value of {@code PTRDIFF_MIN}.
      *
@@ -39,12 +36,7 @@ public class JniStdint {
     static native long PTRDIFF_MIN();
 
 
-    static {
-        PTRDIFF_MIN = PTRDIFF_MIN();
-    }
-
-
-    public static final long PTRDIFF_MAX;
+    public static final long PTRDIFF_MIN = PTRDIFF_MIN();
 
 
     /**
@@ -55,26 +47,10 @@ public class JniStdint {
     static native long PTRDIFF_MAX();
 
 
-    static {
-        PTRDIFF_MAX = PTRDIFF_MAX();
-    }
+    public static final long PTRDIFF_MAX = PTRDIFF_MAX();
 
 
-    /**
-     * The value of {@code SIZE_MAX}. This value may be {@code null} if failed
-     * to read.
-     */
-    public static final BigInteger SIZE_MAX;
-
-
-    /**
-     * Reads the value of {@code SIZE_MAX} and writes into {@code bytes}.
-     *
-     * @param bytes the array to which the value of {@code SIZE_MAX} is written
-     *
-     * @return {@code true} if success, {@code false} otherwise.
-     */
-    static native boolean SIZE_MAX(byte[] bytes);
+    static native byte[] SIZE_MAX_BYTES();
 
 
     /**
@@ -84,14 +60,16 @@ public class JniStdint {
      * @return the value of {@code SIZE_MAX} or {@code null} if failed to read
      */
     static BigInteger SIZE_MAX() {
-        final byte[] bytes = new byte[8 * 1 + 1];
-        return SIZE_MAX(bytes) ? new BigInteger(bytes) : null;
+        final byte[] bytes = SIZE_MAX_BYTES();
+        return bytes == null ? null : new BigInteger(1, bytes);
     }
 
 
-    static {
-        SIZE_MAX = SIZE_MAX();
-    }
+    /**
+     * The value of {@code SIZE_MAX}. This value may be {@code null} if failed
+     * to read.
+     */
+    public static final BigInteger SIZE_MAX = SIZE_MAX();
 
 
     public static final int SIG_ATOMIC_MIN;

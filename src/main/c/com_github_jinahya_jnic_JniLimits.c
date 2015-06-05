@@ -63,21 +63,6 @@ JNIEXPORT jlong JNICALL Java_com_github_jinahya_jnic_JniLimits_LONG_1MAX(JNIEnv 
   return LONG_MAX;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX(JNIEnv *env, jclass cls, jbyteArray dst) {
-  jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
-  if (d == NULL) {
-    return JNI_FALSE;
-  }
-  unsigned long ulong_max = ULONG_MAX;
-  int i;
-  for (i = (*env)->GetArrayLength(env, dst) - 1; i >= 0; i--) {
-    d[i] = (char) (ulong_max & 0xFF);
-    ulong_max >>= 8;
-  }
-  (*env)->ReleaseByteArrayElements(env, dst, d, 0);
-  return JNI_TRUE;
-}
-
 JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
   const size_t size = (int) sizeof (unsigned long);
   jbyteArray jbytes = (*env)->NewByteArray(env, (jsize) (size + 1));
@@ -96,46 +81,51 @@ JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX_1
   return jbytes;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MIN(JNIEnv *env, jclass cls, jbyteArray dst) {
-  jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
-  if (d == NULL) {
-    return JNI_FALSE;
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MIN_1BYTES(JNIEnv *env, jclass cls) {
+  const size_t size = sizeof (long long);
+  jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
+  if (result != NULL) {
+    jbyte * cbytes = (*env)->GetByteArrayElements(env, result, NULL);
+    if (cbytes != NULL) {
+      long long value = LLONG_MIN;
+      int i;
+      for (i = (int) (size - 1); i >= 0; i--) {
+        cbytes[i] = (jbyte) (value & 0xFF);
+        value >>= 8;
+      }
+      (*env)->ReleaseByteArrayElements(env, result, cbytes, 0);
+    }
   }
-  long long v = LLONG_MIN;
-  int i;
-  for (i = (*env)->GetArrayLength(env, dst) - 1; i >= 0; i--) {
-    d[i] = (char) (v & 0xFF);
-    v >>= 8;
-  }
-  (*env)->ReleaseByteArrayElements(env, dst, d, 0);
-  return JNI_TRUE;
+  return result;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MAX(JNIEnv *env, jclass cls, jbyteArray dst) {
-  jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
-  if (d == NULL) {
-    return JNI_FALSE;
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+  const size_t size = sizeof (long long);
+  jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
+  if (result != NULL) {
+    jbyte * cbytes = (*env)->GetByteArrayElements(env, result, NULL);
+    if (cbytes != NULL) {
+      long long value = LLONG_MAX;
+      int i;
+      for (i = (int) (size - 1); i >= 0; i--) {
+        cbytes[i] = (jbyte) (value & 0xFF);
+        value >>= 8;
+      }
+      (*env)->ReleaseByteArrayElements(env, result, cbytes, 0);
+    }
   }
-  //  long long v = LLONG_MAX;
-  //  int i;
-  //  for (i = (*env)->GetArrayLength(env, dst) - 1; i >= 0; i--) {
-  //    d[i] = (char) (v & 0xFF);
-  //    v >>= 8;
-  //  }
-  ull2ca(LLONG_MAX, (char *) d, (*env)->GetArrayLength(env, dst));
-  (*env)->ReleaseByteArrayElements(env, dst, d, 0);
-  return JNI_TRUE;
+  return result;
 }
 
 JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
-  const size_t ullsize = (int) sizeof (unsigned long long);
-  jbyteArray result = (*env)->NewByteArray(env, (jsize) (ullsize + 1));
+  const size_t size = sizeof (unsigned long long);
+  jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
   if (result != NULL) {
     jbyte * cbytes = (*env)->GetByteArrayElements(env, result, NULL);
     if (cbytes != NULL) {
       unsigned long long value = ULLONG_MAX;
       int i;
-      for (i = (int) ullsize; i > 0; i--) {
+      for (i = (int) (size - 1); i >= 0; i--) {
         cbytes[i] = (jbyte) (value & 0xFF);
         value >>= 8;
       }

@@ -1,8 +1,3 @@
-
-
-package com.github.jinahya.jnic;
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;onacit at gmail.com&gt;.
  *
@@ -20,7 +15,15 @@ package com.github.jinahya.jnic;
  */
 
 
+package com.github.jinahya.jnic;
+
+
+import static java.lang.invoke.MethodHandles.lookup;
+import org.slf4j.Logger;
+import static org.slf4j.LoggerFactory.getLogger;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 
 
 /**
@@ -28,6 +31,9 @@ import org.testng.annotations.BeforeSuite;
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
 public abstract class JniTest {
+
+
+    private static final Logger logger = getLogger(lookup().lookupClass());
 
 
     static {
@@ -39,6 +45,20 @@ public abstract class JniTest {
     public static void loadLibrary() {
 
         System.loadLibrary(JniTests.LIB_NAME);
+    }
+
+
+    @BeforeTest
+    public void printNameBeforeTest() {
+
+        logger.debug("================= BEFORE {}", getClass().getSimpleName());
+    }
+
+
+    @AfterTest
+    public void printNameAfterTest() {
+
+        logger.debug("=================  AFTER {}", getClass().getSimpleName());
     }
 
 
