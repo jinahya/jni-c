@@ -27,11 +27,10 @@ JNIEXPORT jstring JNICALL Java_com_github_jinahya_jnic_JniFloat_LDBL_1MIN_1STRIN
   char * trimmed = NULL;
   char * printed = NULL;
   printed = (char *) malloc(16); // 8(darwin)
-  printf("ldbl_min_string printd: %p\n", printed);
   if (printed != NULL) {
-    long double x = LDBL_MIN;
-    int n = sprintf(printed, "%Lf", x);
-    //int n = sprintf(printed, "%Lf", (long double) LDBL_MIN);
+    //long double x = LDBL_MIN;
+    //int n = sprintf(printed, "%Lf", x);
+    int n = sprintf(printed, "%Lf", (long double) LDBL_MIN);
     printf("ldbl_min_string n: %d\n", n);
     printf("ldbl_min_string printed: %s\n", printed);
     if (n >= 0) {
