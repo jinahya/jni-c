@@ -19,7 +19,6 @@ package com.github.jinahya.jnic;
 
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 
 /**
@@ -100,7 +99,7 @@ public class JniFloat {
     }
 
 
-    public static final BigDecimal LDBL_MAX = null;//LDBL_MAX();
+    public static final BigDecimal LDBL_MAX = LDBL_MAX();
 
 
 }

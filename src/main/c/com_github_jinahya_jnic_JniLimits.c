@@ -78,6 +78,24 @@ JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX(JNI
   return JNI_TRUE;
 }
 
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+  const size_t size = (int) sizeof (unsigned long);
+  jbyteArray jbytes = (*env)->NewByteArray(env, (jsize) (size + 1));
+  if (jbytes != NULL) {
+    jbyte * cbytes = (*env)->GetByteArrayElements(env, jbytes, NULL);
+    if (cbytes != NULL) {
+      unsigned long value = ULONG_MAX;
+      int i;
+      for (i = (int) size; i > 0; i--) {
+        cbytes[i] = (jbyte) (value & 0xFF);
+        value >>= 8;
+      }
+      (*env)->ReleaseByteArrayElements(env, jbytes, cbytes, 0);
+    }
+  }
+  return jbytes;
+}
+
 JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MIN(JNIEnv *env, jclass cls, jbyteArray dst) {
   jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
   if (d == NULL) {
@@ -109,12 +127,20 @@ JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MAX(JNI
   return JNI_TRUE;
 }
 
-JNIEXPORT jboolean JNICALL Java_com_github_jinahya_jnic_JniLimits_ULLONG_1MAX(JNIEnv *env, jclass cls, jbyteArray dst) {
-  jbyte *d = (*env)->GetByteArrayElements(env, dst, NULL);
-  if (d == NULL) {
-    return JNI_FALSE;
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+  const size_t ullsize = (int) sizeof (unsigned long long);
+  jbyteArray result = (*env)->NewByteArray(env, (jsize) (ullsize + 1));
+  if (result != NULL) {
+    jbyte * cbytes = (*env)->GetByteArrayElements(env, result, NULL);
+    if (cbytes != NULL) {
+      unsigned long long value = ULLONG_MAX;
+      int i;
+      for (i = (int) ullsize; i > 0; i--) {
+        cbytes[i] = (jbyte) (value & 0xFF);
+        value >>= 8;
+      }
+      (*env)->ReleaseByteArrayElements(env, result, cbytes, 0);
+    }
   }
-  ull2ca(ULLONG_MAX, (char *) d, (*env)->GetArrayLength(env, dst));
-  (*env)->ReleaseByteArrayElements(env, dst, d, 0);
-  return JNI_TRUE;
+  return result;
 }

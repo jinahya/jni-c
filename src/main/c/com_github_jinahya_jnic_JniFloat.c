@@ -27,13 +27,25 @@ JNIEXPORT jstring JNICALL Java_com_github_jinahya_jnic_JniFloat_LDBL_1MIN_1STRIN
   char * trimmed = NULL;
   char * printed = NULL;
   printed = (char *) malloc(16); // 8(darwin)
+  printf("ldbl_min_string printd: %p\n", printed);
   if (printed != NULL) {
-    int n = sprintf(printed, "%Lf", (long double) LDBL_MIN);
+    long double x = LDBL_MIN;
+    int n = sprintf(printed, "%Lf", x);
+    //int n = sprintf(printed, "%Lf", (long double) LDBL_MIN);
+    printf("ldbl_min_string n: %d\n", n);
+    printf("ldbl_min_string printed: %s\n", printed);
     if (n >= 0) {
+      printf("libl_min_string (size_t) (n + 1): %zu\n", (size_t) (n + 1));
       trimmed = (char *) malloc((size_t) (n + 1));
+      printf("ldbl_min_string trimmed: %p\n", trimmed);
       if (trimmed != NULL) {
         strncpy(trimmed, printed, (size_t) n);
+        trimmed[n] = '\0';
+        printf("ldbl_min_string strncpy-ed\n");
+        printf("ldbl_min_string trimmed: %s\n", trimmed);
+        printf("ldbl_min_string trimmed[%d]: %d\n", n, trimmed[n]);
         result = (*env)->NewStringUTF(env, trimmed);
+        printf("ldbl_min_string newStringUTF-ed\n");
       }
     }
   }
@@ -82,6 +94,7 @@ JNIEXPORT jstring JNICALL Java_com_github_jinahya_jnic_JniFloat_LDBL_1MAX_1STRIN
     printf("ldbl_max_string n: %d\n", n);
     if (n >= 0) {
       trimmed = (char *) malloc((size_t) (n + 1));
+      trimmed[n] = '\0';
       printf("ldbl_max_trimmed: %p\n", trimmed);
       if (trimmed != NULL) {
         strncpy(trimmed, printed, (size_t) n);
