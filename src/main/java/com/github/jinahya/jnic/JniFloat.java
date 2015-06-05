@@ -36,13 +36,11 @@ public class JniFloat {
     public static final int FLT_RADIX = FLT_RADIX();
 
 
-    // ------------------------------------------------------------- DECIMAL_DIG
-    static native int DECIMAL_DIG();
-
-
-    public static final int DECIMAL_DIG = DECIMAL_DIG();
-
-
+//    // ------------------------------------------------------------- DECIMAL_DIG
+//    static native int DECIMAL_DIG();
+//
+//
+//    public static final int DECIMAL_DIG = DECIMAL_DIG();
     // ----------------------------------------------------------------- FLT_MIN
     static native float FLT_MIN();
 

@@ -10,9 +10,9 @@ JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFloat_FLT_1RADIX(JNIEnv *
   return FLT_RADIX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFloat_DECIMAL_1DIG(JNIEnv *env, jclass cls) {
-  return DECIMAL_DIG;
-}
+//JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFloat_DECIMAL_1DIG(JNIEnv *env, jclass cls) {
+//  return DECIMAL_DIG;
+//}
 
 JNIEXPORT jfloat JNICALL Java_com_github_jinahya_jnic_JniFloat_FLT_1MIN(JNIEnv *env, jclass cls) {
   return FLT_MIN;

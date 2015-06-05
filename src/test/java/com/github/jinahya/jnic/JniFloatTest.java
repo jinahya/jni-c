@@ -44,15 +44,13 @@ public class JniFloatTest extends JniTest {
     }
 
 
-    @Test(enabled = true)
-    public static void DECIMAL_DIG() {
-
-        logger.debug("DECIAML_DIG: {}", JniFloat.DECIMAL_DIG);
-
-        assertTrue(JniFloat.DECIMAL_DIG > 0);
-    }
-
-
+//    @Test(enabled = true)
+//    public static void DECIMAL_DIG() {
+//
+//        logger.debug("DECIAML_DIG: {}", JniFloat.DECIMAL_DIG);
+//
+//        assertTrue(JniFloat.DECIMAL_DIG > 0);
+//    }
     @Test(enabled = true)
     public static void FLT_MIN() {
 
