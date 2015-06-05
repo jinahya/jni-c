@@ -32,7 +32,7 @@ JNIEXPORT jstring JNICALL Java_com_github_jinahya_jnic_JniFloat_LDBL_1MIN_1STRIN
     if (n >= 0) {
       trimmed = (char *) malloc((size_t) (n + 1));
       if (trimmed != NULL) {
-        strncpy(trimmed, printed, n);
+        strncpy(trimmed, printed, (size_t) n);
         result = (*env)->NewStringUTF(env, trimmed);
       }
     }
@@ -84,7 +84,7 @@ JNIEXPORT jstring JNICALL Java_com_github_jinahya_jnic_JniFloat_LDBL_1MAX_1STRIN
       trimmed = (char *) malloc((size_t) (n + 1));
       printf("ldbl_max_trimmed: %p\n", trimmed);
       if (trimmed != NULL) {
-        strncpy(trimmed, printed, n);
+        strncpy(trimmed, printed, (size_t) n);
         printf("ldbl_max_trimmed strncpy-ed");
         result = (*env)->NewStringUTF(env, trimmed);
       }
