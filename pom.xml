@@ -6,7 +6,7 @@
   <!-- The Basics -->
   <groupId>com.github.jinahya</groupId>
   <artifactId>jnic</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   <packaging>nar</packaging>
   <dependencyManagement />
   <dependencies>
