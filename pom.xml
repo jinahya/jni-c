@@ -16,6 +16,15 @@
       <version>1.1.3</version>
       <scope>test</scope>
     </dependency>
+    <!--
+    <dependency>
+      <groupId>com.github.jinahya</groupId>
+      <artifactId>jni-utils</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>nar</type>
+      <scope>compile</scope>
+    </dependency>
+    -->
     <dependency>
       <groupId>com.google.inject</groupId>
       <artifactId>guice</artifactId>

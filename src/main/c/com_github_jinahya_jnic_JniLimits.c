@@ -1,7 +1,6 @@
 #include <jni.h>
 #include "com_github_jinahya_jnic_JniLimits.h"
 #include <limits.h>
-#include "com_github_jinahya_jnic_JniUtilsNative.h"
 
 JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_CHAR_1BIT(JNIEnv *env, jclass cls) {
   return CHAR_BIT;

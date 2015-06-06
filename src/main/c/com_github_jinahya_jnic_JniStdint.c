@@ -1,11 +1,9 @@
 #include <jni.h>
 #include "com_github_jinahya_jnic_JniStdint.h"
 #include <stdint.h>
-#include "com_github_jinahya_jnic_JniUtilsNative.h"
 #include <stdio.h>
 
 JNIEXPORT jlong JNICALL Java_com_github_jinahya_jnic_JniStdint_PTRDIFF_1MIN(JNIEnv *env, jclass cls) {
-  //printf("PTRDIFF_MIN: %ld\n", PTRDIFF_MIN);
   return PTRDIFF_MIN;
 }
 

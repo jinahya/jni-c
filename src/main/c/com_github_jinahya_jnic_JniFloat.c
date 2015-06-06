@@ -12,10 +12,10 @@ JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFloat_FLT_1RADIX(JNIEnv *
 }
 
 JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFloat_DECIMAL_1DIG(JNIEnv *env, jclass cls) {
-#if defined DECIMAL_DIG
-  return DECIMAL_DIG;
-#else
+#ifndef DECIMAL_DIG
   return -1;
+#else
+  return DECIMAL_DIG;
 #endif
 }
 
