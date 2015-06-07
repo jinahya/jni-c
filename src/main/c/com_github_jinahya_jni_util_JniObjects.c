@@ -4,7 +4,6 @@
 #include <stdio.h>
 
 jobject JNI_NewObjectA_CNMS(JNIEnv *env, const char *name, const char *sig, jvalue *args) {
-  printf("JNI_NewObjectA_CNMS(%p, %s, %s)\n", env, name, sig);
   jclass c = (*env)->FindClass(env, name);
   if (c == NULL) {
     (*env)->ExceptionDescribe(env);
@@ -43,7 +42,6 @@ jobject JNI_NewObjectV_CNMS(JNIEnv *env, const char *name, const char *sig, va_l
 }
 
 jobject JNI_NewJavaLangInteger_I(JNIEnv *env, jint value) {
-  printf("JNI_NewJavaLangInteger_I(%p, %d\n", env, value);
   jvalue arg;
   arg.i = value;
   return JNI_NewObjectA_CNMS(env, "java/lang/Integer", "(I)V", &arg);

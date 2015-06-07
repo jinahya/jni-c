@@ -24,67 +24,75 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DIVBYZERO(JNI
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INEXACT(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INEXACT(JNIEnv *env, jclass cls) {
 #ifndef FE_INEXACT
-  return -1;
+  return NULL;
 #else
-  return FE_INEXACT;
+  //return FE_INEXACT;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_INEXACT);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INVALID(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INVALID(JNIEnv *env, jclass cls) {
 #ifndef FE_INVALID
-  return -1;
+  return NULL;
 #else
-  return FE_INVALID;
+  //return FE_INVALID;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_INVALID);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1OVERFLOW(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1OVERFLOW(JNIEnv *env, jclass cls) {
 #ifndef FE_OVERFLOW
-  return -1;
+  return NULL;
 #else
-  return FE_OVERFLOW;
+  //return FE_OVERFLOW;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_OVERFLOW);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UNDERFLOW(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UNDERFLOW(JNIEnv *env, jclass cls) {
 #ifndef FE_UNDERFLOW
-  return -1;
+  return NULL;
 #else
-  return FE_UNDERFLOW;
+  //return FE_UNDERFLOW;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_UNDERFLOW);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DOWNWARD(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DOWNWARD(JNIEnv *env, jclass cls) {
 #ifndef FE_DOWNWARD
-  return -1;
+  return NULL;
 #else
-  return FE_DOWNWARD;
+  //return FE_DOWNWARD;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_DOWNWARD);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TONEAREST(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TONEAREST(JNIEnv *env, jclass cls) {
 #ifndef FE_TONEAREST
-  return -1;
+  return NULL;
 #else
-  return FE_TONEAREST;
+  //return FE_TONEAREST;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_TONEAREST);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TOWARDZERO(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TOWARDZERO(JNIEnv *env, jclass cls) {
 #ifndef FE_TOWARDZERO
-  return -1;
+  return NULL;
 #else
-  return FE_TOWARDZERO;
+  //return FE_TOWARDZERO;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_TOWARDZERO);
 #endif
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UPWARD(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UPWARD(JNIEnv *env, jclass cls) {
 #ifndef FE_UPWARD
-  return -1;
+  return NULL;
 #else
-  return FE_UPWARD;
+  //return FE_UPWARD;
+  return JNI_NewJavaLangInteger_I(env, (jint) FE_UPWARD);
 #endif
 }
 
