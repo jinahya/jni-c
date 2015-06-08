@@ -14,7 +14,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_Stdint_PTRDIFF_1MIN(JNIEnv
 }
 
 JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_Stdint_PTRDIFF_1MAX(JNIEnv * env, jclass cls) {
-#ifndef PTRDIFF_MAX;
+#ifndef PTRDIFF_MAX
   return NULL;
 #endif
   return JNI_NewJavaLangLong_L(env, (jlong) PTRDIFF_MAX);
