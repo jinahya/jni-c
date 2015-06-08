@@ -5,6 +5,12 @@
 #include <string.h> // memcpy
 
 int array_reverse(void * array, const size_t offset, const size_t length, const size_t size) {
+  printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
+  printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
+  printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
+  printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
+  printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
+  printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
   //printf("array_reverse(%p, %zu, %zu, %zu)\n", array, offset, length, size);
   void * temp = malloc(size);
   if (temp == NULL) {

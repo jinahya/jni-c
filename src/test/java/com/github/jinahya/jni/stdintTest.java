@@ -23,6 +23,7 @@ import static java.lang.invoke.MethodHandles.lookup;
 import java.util.Optional;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import org.testng.annotations.Test;
 
@@ -110,8 +111,11 @@ public class stdintTest extends JniTest {
     public static void UINT8_MAX() {
 
         logger.debug("UINT8_MAX: {}", stdint.UINT8_MAX);
-        Optional.ofNullable(stdint.UINT8_MAX).ifPresent(v -> assertTrue(v > 0));
-        assertTrue(stdint.UINT8_MAX == null || stdint.UINT8_MAX.intValue() > 0);
+        Optional
+            .ofNullable(stdint.UINT8_MAX)
+            .ifPresent(v -> assertEquals(v.shortValue(), 255));
+        assertTrue(stdint.UINT8_MAX == null
+                   || stdint.UINT8_MAX.intValue() == 255);
     }
 
 

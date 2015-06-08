@@ -10,8 +10,9 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_PTRDIFF_1MIN(JNIEnv
 #ifndef PTRDIFF_MIN
   return NULL;
 #endif
-  const jlong value = (jlong) PTRDIFF_MIN;
-  return JNI_NewJavaLangLong_V(env, value);
+  //const jlong value = (jlong) PTRDIFF_MIN;
+  //return JNI_NewJavaLangLong_V(env, value);
+  return JNI_NewJavaLangLong_V(env, (jlong) PTRDIFF_MIN);
 }
 
 JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_PTRDIFF_1MAX(JNIEnv * env, jclass cls) {
@@ -85,8 +86,9 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_UINT8_1MAX(JNIEnv *
 #ifndef UINT8_MAX
   return NULL;
 #endif
-  const jshort value = (jshort) UINT8_MAX;
-  return JNI_NewJavaLangShort_V(env, value);
+  //const jshort value = (jshort) UINT8_MAX;
+  //return JNI_NewJavaLangShort_V(env, value);
+  return JNI_NewJavaLangShort_V(env, (jshort) UINT8_MAX);
 }
 
 
