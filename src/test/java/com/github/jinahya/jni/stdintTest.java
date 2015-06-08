@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class stdintTest_b extends JniTest {
+public class stdintTest extends JniTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());
