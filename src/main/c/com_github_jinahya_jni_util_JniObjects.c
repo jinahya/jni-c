@@ -53,4 +53,17 @@ jobject JNI_NewJavaLangInteger_S(JNIEnv *env, jstring s) {
   return JNI_NewObjectA_CNMS(env, "java/lang/Integer", "(Ljava/lang/String;)V", &arg);
 }
 
+jobject JNI_NewJavaLangLong_L(JNIEnv *env, jlong value) {
+  printf("JNI_NewJavaLangLong_L(%p, %ld\n", env, (long) value);
+  jvalue arg;
+  arg.j = value;
+  return JNI_NewObjectA_CNMS(env, "java/lang/Long", "(J)V", &arg);
+}
+
+jobject JNI_NewJavaLangLong_S(JNIEnv *env, jstring s) {
+  jvalue arg;
+  arg.l = s;
+  return JNI_NewObjectA_CNMS(env, "java/lang/Long", "(Ljava/lang/String;)V", &arg);
+}
+
 

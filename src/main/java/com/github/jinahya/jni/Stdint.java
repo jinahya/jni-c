@@ -15,7 +15,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.github.jinahya.jnic;
+package com.github.jinahya.jni;
 
 
 import java.math.BigInteger;
@@ -25,31 +25,34 @@ import java.math.BigInteger;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniStdint {
+public class Stdint {
 
 
+    // ------------------------------------------------------- PTRDIFF_MIN (C99)
     /**
      * Reads the value of {@code PTRDIFF_MIN}.
      *
      * @return the value of {@code PTRDIFF_MIN}.
      */
-    static native long PTRDIFF_MIN();
+    static native Long PTRDIFF_MIN();
 
 
-    public static final long PTRDIFF_MIN = PTRDIFF_MIN();
+    public static final Long PTRDIFF_MIN = PTRDIFF_MIN();
 
 
+    // ------------------------------------------------------- PTRDIFF_MAX (C99)
     /**
      * Reads the value of {@code PTRDIFF_MAX}.
      *
      * @return the value of {@code PTRDIFF_MAX}.
      */
-    static native long PTRDIFF_MAX();
+    static native Long PTRDIFF_MAX();
 
 
-    public static final long PTRDIFF_MAX = PTRDIFF_MAX();
+    public static final Long PTRDIFF_MAX = PTRDIFF_MAX();
 
 
+    // ---------------------------------------------------------- SIZE_MAX (C99)
     static native byte[] SIZE_MAX_BYTES();
 
 
@@ -72,6 +75,7 @@ public class JniStdint {
     public static final BigInteger SIZE_MAX = SIZE_MAX();
 
 
+    // ---------------------------------------------------- SIG_ATOMIC_MIN (C99)
     public static final int SIG_ATOMIC_MIN;
 
 

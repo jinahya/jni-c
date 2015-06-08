@@ -14,6 +14,9 @@ extern "C" {
   jobject JNI_NewJavaLangInteger_I(JNIEnv *, jint value);
   jobject JNI_NewJavaLangInteger_S(JNIEnv *, jstring s);
 
+  jobject JNI_NewJavaLangLong_L(JNIEnv *, jlong value);
+  jobject JNI_NewJavaLangLong_S(JNIEnv *, jstring s);
+
 #ifdef __cplusplus
 }
 #endif
