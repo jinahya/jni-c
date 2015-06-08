@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class stdintTest extends JniTest {
+public class stdintTest_b extends JniTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());
@@ -40,9 +40,9 @@ public class stdintTest extends JniTest {
     @Test(enabled = true)
     public static void PTRDIFF_MIN() {
 
-        logger.debug("PTRDIFF_MIN: {}", stdint.PTRDIFF_MIN);
+        logger.debug("PTRDIFF_MIN: {}", stdint_b.PTRDIFF_MIN);
 
-        assertTrue(stdint.PTRDIFF_MIN == null || stdint.PTRDIFF_MIN < 0L);
+        assertTrue(stdint_b.PTRDIFF_MIN == null || stdint_b.PTRDIFF_MIN < 0L);
     }
 
 
@@ -50,9 +50,9 @@ public class stdintTest extends JniTest {
     @Test(enabled = true)
     public static void PTRDIFF_MAX() {
 
-        logger.debug("PTRDIFF_MAX: {}", stdint.PTRDIFF_MAX);
+        logger.debug("PTRDIFF_MAX: {}", stdint_b.PTRDIFF_MAX);
 
-        assertTrue(stdint.PTRDIFF_MAX == null || stdint.PTRDIFF_MAX > 0L);
+        assertTrue(stdint_b.PTRDIFF_MAX == null || stdint_b.PTRDIFF_MAX > 0L);
     }
 
 
@@ -60,47 +60,47 @@ public class stdintTest extends JniTest {
     @Test
     public static void SIZE_MAX() {
 
-        logger.debug("SIZE_MAX: {}", stdint.SIZE_MAX);
-        assertTrue(stdint.SIZE_MAX == null
-                   || stdint.SIZE_MAX.signum() == 1);
+        logger.debug("SIZE_MAX: {}", stdint_b.SIZE_MAX);
+        assertTrue(stdint_b.SIZE_MAX == null
+                   || stdint_b.SIZE_MAX.signum() == 1);
     }
 
 
     @Test
     public static void SIG_ATOMIC_MIN() {
-        logger.debug("SIG_ATOMIC_MIN: {}", stdint.SIG_ATOMIC_MIN);
-        assertTrue(stdint.SIG_ATOMIC_MIN == null || stdint.SIG_ATOMIC_MIN < 0);
+        logger.debug("SIG_ATOMIC_MIN: {}", stdint_b.SIG_ATOMIC_MIN);
+        assertTrue(stdint_b.SIG_ATOMIC_MIN == null || stdint_b.SIG_ATOMIC_MIN < 0);
     }
 
 
     @Test
     public static void SIG_ATOMIC_MAX() {
-        logger.debug("SIG_ATOMIC_MAX: {}", stdint.SIG_ATOMIC_MAX);
-        assertTrue(stdint.SIG_ATOMIC_MAX == null || stdint.SIG_ATOMIC_MAX > 0);
+        logger.debug("SIG_ATOMIC_MAX: {}", stdint_b.SIG_ATOMIC_MAX);
+        assertTrue(stdint_b.SIG_ATOMIC_MAX == null || stdint_b.SIG_ATOMIC_MAX > 0);
     }
 
 
     @Test
     public static void WCHAR_MIN() {
-        logger.debug("WCHAR_MIN: {}", stdint.WCHAR_MIN);
+        logger.debug("WCHAR_MIN: {}", stdint_b.WCHAR_MIN);
     }
 
 
     @Test
     public static void WCHAR_MAX() {
-        logger.debug("WCHAR_MAX: {}", stdint.WCHAR_MAX);
+        logger.debug("WCHAR_MAX: {}", stdint_b.WCHAR_MAX);
     }
 
 
     @Test
     public static void WINT_MIN() {
-        logger.debug("WINT_MIN: {}", stdint.WINT_MIN);
+        logger.debug("WINT_MIN: {}", stdint_b.WINT_MIN);
     }
 
 
     @Test
     public static void WINT_MAX() {
-        logger.debug("WINT_MAX: {}", stdint.WINT_MAX);
+        logger.debug("WINT_MAX: {}", stdint_b.WINT_MAX);
     }
 
 

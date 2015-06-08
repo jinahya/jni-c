@@ -25,7 +25,7 @@ import java.math.BigInteger;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class stdint {
+public class stdint_b {
 
 
     // ------------------------------------------------------- PTRDIFF_MIN (C99)
