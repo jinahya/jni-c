@@ -25,7 +25,7 @@ import java.math.BigInteger;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class Stdint {
+public class stdint {
 
 
     // ------------------------------------------------------- PTRDIFF_MIN (C99)
@@ -63,7 +63,9 @@ public class Stdint {
      * @return the value of {@code SIZE_MAX} or {@code null} if failed to read
      */
     static BigInteger SIZE_MAX() {
+
         final byte[] bytes = SIZE_MAX_BYTES();
+
         return bytes == null ? null : new BigInteger(1, bytes);
     }
 
@@ -76,26 +78,17 @@ public class Stdint {
 
 
     // ---------------------------------------------------- SIG_ATOMIC_MIN (C99)
-    public static final int SIG_ATOMIC_MIN;
+    static native Integer SIG_ATOMIC_MIN();
 
 
-    static native int SIG_ATOMIC_MIN();
+    public static final Integer SIG_ATOMIC_MIN = SIG_ATOMIC_MIN();
 
 
-    static {
-        SIG_ATOMIC_MIN = SIG_ATOMIC_MIN();
-    }
+    // ---------------------------------------------------- SIG_ATOMIC_MAX (C99)
+    static native Integer SIG_ATOMIC_MAX();
 
 
-    public static final int SIG_ATOMIC_MAX;
-
-
-    static native int SIG_ATOMIC_MAX();
-
-
-    static {
-        SIG_ATOMIC_MAX = SIG_ATOMIC_MAX();
-    }
+    public static final Integer SIG_ATOMIC_MAX = SIG_ATOMIC_MAX();
 
 
     public static final int WCHAR_MIN;
