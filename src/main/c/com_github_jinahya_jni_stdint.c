@@ -10,14 +10,15 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_PTRDIFF_1MIN(JNIEnv
 #ifndef PTRDIFF_MIN
   return NULL;
 #endif
-  return JNI_NewJavaLangLong_L(env, (jlong) PTRDIFF_MIN);
+  const jlong value = (jlong) PTRDIFF_MIN;
+  return JNI_NewJavaLangLong_V(env, value);
 }
 
 JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_PTRDIFF_1MAX(JNIEnv * env, jclass cls) {
 #ifndef PTRDIFF_MAX
   return NULL;
 #endif
-  return JNI_NewJavaLangLong_L(env, (jlong) PTRDIFF_MAX);
+  return JNI_NewJavaLangLong_V(env, (jlong) PTRDIFF_MAX);
 }
 
 JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_stdint_SIZE_1MAX_1BYTES(JNIEnv * env, jclass cls) {
@@ -52,7 +53,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_SIG_1ATOMIC_1MIN(JN
 #endif
   //return SIG_ATOMIC_MIN;
   const int32_t value = SIG_ATOMIC_MIN;
-  return JNI_NewJavaLangInteger_I(env, (jint) value);
+  return JNI_NewJavaLangInteger_V(env, (jint) value);
 }
 
 JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_SIG_1ATOMIC_1MAX(JNIEnv *env, jclass cls) {
@@ -61,7 +62,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_SIG_1ATOMIC_1MAX(JN
 #endif
   //return SIG_ATOMIC_MAX;
   const int32_t value = SIG_ATOMIC_MAX;
-  return JNI_NewJavaLangInteger_I(env, (jint) value);
+  return JNI_NewJavaLangInteger_V(env, (jint) value);
 }
 
 JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_stdint_WCHAR_1MIN(JNIEnv *env, jclass cls) {
@@ -79,3 +80,13 @@ JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_stdint_WINT_1MIN(JNIEnv *env
 JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_stdint_WINT_1MAX(JNIEnv *env, jclass cls) {
   return WINT_MAX;
 }
+
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_stdint_UINT8_1MAX(JNIEnv *env, jclass cls) {
+#ifndef UINT8_MAX
+  return NULL;
+#endif
+  const jshort value = (jshort) UINT8_MAX;
+  return JNI_NewJavaLangShort_V(env, value);
+}
+
+

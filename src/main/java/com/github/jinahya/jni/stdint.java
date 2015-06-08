@@ -22,10 +22,11 @@ import java.math.BigInteger;
 
 
 /**
+ * (C99).
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class stdint {
+public class stdint { // (C99)
 
 
     // ------------------------------------------------------- PTRDIFF_MIN (C99)
@@ -123,6 +124,13 @@ public class stdint {
 
 
     public static final long WINT_MAX = WINT_MAX(); // wint_t
+
+
+    // --------------------------------------------------------------- UINT8_MAX
+    static native Short UINT8_MAX();
+
+
+    public static final Short UINT8_MAX = UINT8_MAX();
 
 
 }

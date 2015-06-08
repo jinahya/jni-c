@@ -24,5 +24,15 @@ package com.github.jinahya.jni;
  */
 public class singal {
 
+
+    public static interface handler {
+
+
+        void handle(int signal);
+
+
+    }
+
+
 }
 

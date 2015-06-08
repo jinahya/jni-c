@@ -28,13 +28,13 @@ jbyteArray JNI_NewByteArray_VS(JNIEnv * env, const void * value, const size_t si
 }
 
 jbyteArray JNI_NewByteArray_VS_BE(JNIEnv *env, const void * value, const size_t size) {
-  printf("JNI_NewByteArray_VS_BE(%p, %p, %zu)\n", env, value, size);
+  //printf("JNI_NewByteArray_VS_BE(%p, %p, %zu)\n", env, value, size);
   jbyteArray array = NULL;
   char *bytes = array_value_be(value, size);
-  printf("bytes: %p\n", bytes);
+  //printf("bytes: %p\n", bytes);
   if (bytes != NULL) {
     array = (*env)->NewByteArray(env, (jsize) size);
-    printf("array: %p\n", array);
+    //printf("array: %p\n", array);
     if (array != NULL) {
       (*env)->SetByteArrayRegion(env, array, 0, (jsize) size, (jbyte *) bytes);
     }

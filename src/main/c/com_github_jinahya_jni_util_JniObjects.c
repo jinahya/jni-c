@@ -41,7 +41,31 @@ jobject JNI_NewObjectV_CNMS(JNIEnv *env, const char *name, const char *sig, va_l
   return o;
 }
 
-jobject JNI_NewJavaLangInteger_I(JNIEnv *env, jint value) {
+jobject JNI_NewJavaLangByte_V(JNIEnv *env, jbyte value) {
+  jvalue arg;
+  arg.b = value;
+  return JNI_NewObjectA_CNMS(env, "java/lang/Byte", "(B)V", &arg);
+}
+
+jobject JNI_NewJavaLangByte_S(JNIEnv *env, jstring s) {
+  jvalue arg;
+  arg.l = s;
+  return JNI_NewObjectA_CNMS(env, "java/lang/Byte", "(Ljava/lang/String;)V", &arg);
+}
+
+jobject JNI_NewJavaLangShort_V(JNIEnv * env, const jshort value) {
+  jvalue arg;
+  arg.s = value;
+  return JNI_NewObjectA_CNMS(env, "java/lang/Short", "(S)V", &arg);
+}
+
+jobject JNI_NewJavaLangShort_S(JNIEnv * env, const jstring s) {
+  jvalue arg;
+  arg.l = s;
+  return JNI_NewObjectA_CNMS(env, "java/lang/Short", "(Ljava/lang/String;)V", &arg);
+}
+
+jobject JNI_NewJavaLangInteger_V(JNIEnv *env, jint value) {
   jvalue arg;
   arg.i = value;
   return JNI_NewObjectA_CNMS(env, "java/lang/Integer", "(I)V", &arg);
@@ -53,8 +77,8 @@ jobject JNI_NewJavaLangInteger_S(JNIEnv *env, jstring s) {
   return JNI_NewObjectA_CNMS(env, "java/lang/Integer", "(Ljava/lang/String;)V", &arg);
 }
 
-jobject JNI_NewJavaLangLong_L(JNIEnv *env, jlong value) {
-  printf("JNI_NewJavaLangLong_L(%p, %ld\n", env, (long) value);
+jobject JNI_NewJavaLangLong_V(JNIEnv *env, jlong value) {
+  //printf("JNI_NewJavaLangLong_V(%p, %ld\n", env, (long) value);
   jvalue arg;
   arg.j = value;
   return JNI_NewObjectA_CNMS(env, "java/lang/Long", "(J)V", &arg);

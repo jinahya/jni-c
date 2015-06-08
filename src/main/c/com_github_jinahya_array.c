@@ -5,7 +5,7 @@
 #include <string.h> // memcpy
 
 int array_reverse(void * array, const size_t offset, const size_t length, const size_t size) {
-  printf("array_reverse(%p, %zu, %zu, %zu)\n", array, offset, length, size);
+  //printf("array_reverse(%p, %zu, %zu, %zu)\n", array, offset, length, size);
   void * temp = malloc(size);
   if (temp == NULL) {
     fprintf(stderr, "failed to allocate; size(%zu)\n", size);
@@ -25,22 +25,22 @@ int array_reverse(void * array, const size_t offset, const size_t length, const 
 }
 
 char * array_value(const void * value, const size_t size) {
-  printf("array_value(%p, %zu)\n", value, size);
-  printf("value: %llu\n", *(unsigned long long *) value);
+  //printf("array_value(%p, %zu)\n", value, size);
+  //printf("value: %llu\n", *(unsigned long long *) value);
   char * array = malloc(size);
-  printf("array allocated: %p\n", array);
+  //printf("array allocated: %p\n", array);
   if (array != NULL) {
-    printf("memcpy-ing\n");
+    //printf("memcpy-ing\n");
     memcpy(array, value, size);
-    printf("memcpy-ed\n");
+    //printf("memcpy-ed\n");
   }
   return array;
 }
 
 char * array_value_be(const void * value, const size_t size) {
-  printf("array_value_be(%p, %zu)\n", value, size);
+  //printf("array_value_be(%p, %zu)\n", value, size);
   char * array = array_value(value, size);
-  printf("array: %p\n", array);
+  //printf("array: %p\n", array);
   if (array != NULL && !IS_BIG_ENDIAN) {
     array_reverse(array, 0, size, sizeof (char));
   }
