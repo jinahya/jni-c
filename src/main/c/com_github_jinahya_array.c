@@ -31,22 +31,15 @@ int array_reverse_ol(void * array, const size_t offset, const size_t length, con
 }
 
 char * array_from_value(const void * value, const size_t size) {
-  //printf("array_from_value(%p, %zu)\n", value, size);
-  //printf("value: %llu\n", *(unsigned long long *) value);
   char * array = malloc(size);
-  //printf("array allocated: %p\n", array);
   if (array != NULL) {
-    //printf("memcpy-ing\n");
     memcpy(array, value, size);
-    //printf("memcpy-ed\n");
   }
   return array;
 }
 
 char * array_from_value_be(const void * value, const size_t size) {
-  //printf("array_from_value_be(%p, %zu)\n", value, size);
   char * array = array_from_value(value, size);
-  //printf("array: %p\n", array);
   if (array != NULL && !IS_BIG_ENDIAN) {
     array_reverse_ol(array, 0, size, sizeof (char));
   }
