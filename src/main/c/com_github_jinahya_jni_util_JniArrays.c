@@ -16,7 +16,7 @@ void JNI_ReverseByteArray(JNIEnv * env, const jbyteArray array) {
 
 jbyteArray JNI_NewByteArray_VS(JNIEnv * env, const void * value, const size_t size) {
   jbyteArray array = NULL;
-  char *bytes = array_value(value, size);
+  char *bytes = array_from_value(value, size);
   if (bytes != NULL) {
     array = (*env)->NewByteArray(env, (jsize) size);
     if (array != NULL) {
@@ -30,7 +30,7 @@ jbyteArray JNI_NewByteArray_VS(JNIEnv * env, const void * value, const size_t si
 jbyteArray JNI_NewByteArray_VS_BE(JNIEnv *env, const void * value, const size_t size) {
   //printf("JNI_NewByteArray_VS_BE(%p, %p, %zu)\n", env, value, size);
   jbyteArray array = NULL;
-  char *bytes = array_value_be(value, size);
+  char *bytes = array_from_value_be(value, size);
   //printf("bytes: %p\n", bytes);
   if (bytes != NULL) {
     array = (*env)->NewByteArray(env, (jsize) size);
@@ -45,7 +45,7 @@ jbyteArray JNI_NewByteArray_VS_BE(JNIEnv *env, const void * value, const size_t 
 
 jbyteArray JNI_NewByteArray_VS_LE(JNIEnv *env, const void *value, const size_t size) {
   jbyteArray array = NULL;
-  char *bytes = array_value_le(value, size);
+  char *bytes = array_from_value_le(value, size);
   if (bytes != NULL) {
     array = (*env)->NewByteArray(env, (jsize) size);
     if (array != NULL) {

@@ -4,14 +4,14 @@
 #include <stdlib.h> // malloc
 #include <string.h> // memcpy
 
-int array_reverse(void * array, const size_t offset, const size_t length, const size_t size) {
+int array_reverse_ol(void * array, const size_t offset, const size_t length, const size_t size) {
   printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
   printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
   printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
   printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
   printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
   printf("IS_BIG_ENDIAN: %d\n", IS_BIG_ENDIAN);
-  //printf("array_reverse(%p, %zu, %zu, %zu)\n", array, offset, length, size);
+  //printf("array_reverse_ol(%p, %zu, %zu, %zu)\n", array, offset, length, size);
   void * temp = malloc(size);
   if (temp == NULL) {
     fprintf(stderr, "failed to allocate; size(%zu)\n", size);
@@ -30,8 +30,8 @@ int array_reverse(void * array, const size_t offset, const size_t length, const 
   return EXIT_SUCCESS;
 }
 
-char * array_value(const void * value, const size_t size) {
-  //printf("array_value(%p, %zu)\n", value, size);
+char * array_from_value(const void * value, const size_t size) {
+  //printf("array_from_value(%p, %zu)\n", value, size);
   //printf("value: %llu\n", *(unsigned long long *) value);
   char * array = malloc(size);
   //printf("array allocated: %p\n", array);
@@ -43,20 +43,20 @@ char * array_value(const void * value, const size_t size) {
   return array;
 }
 
-char * array_value_be(const void * value, const size_t size) {
-  //printf("array_value_be(%p, %zu)\n", value, size);
-  char * array = array_value(value, size);
+char * array_from_value_be(const void * value, const size_t size) {
+  //printf("array_from_value_be(%p, %zu)\n", value, size);
+  char * array = array_from_value(value, size);
   //printf("array: %p\n", array);
   if (array != NULL && !IS_BIG_ENDIAN) {
-    array_reverse(array, 0, size, sizeof (char));
+    array_reverse_ol(array, 0, size, sizeof (char));
   }
   return array;
 }
 
-char * array_value_le(const void * value, const size_t size) {
-  char * array = array_value(value, size);
+char * array_from_value_le(const void * value, const size_t size) {
+  char * array = array_from_value(value, size);
   if (array != NULL && IS_BIG_ENDIAN) {
-    array_reverse(array, 0, size, sizeof (char));
+    array_reverse_ol(array, 0, size, sizeof (char));
   }
   return array;
 }

@@ -9,9 +9,9 @@ extern "C" {
 
   int array_reverse(void *, const size_t, const size_t, const size_t);
 
-  char * array_value(const void *, const size_t);
-  char * array_value_be(const void *, const size_t);
-  char * array_value_le(const void *, const size_t);
+  char * array_from_value(const void *, const size_t);
+  char * array_from_value_be(const void *, const size_t);
+  char * array_from_value_le(const void *, const size_t);
 
 #ifdef __cplusplus
 }
