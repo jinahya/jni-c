@@ -15,9 +15,10 @@
  */
 
 
-package com.github.jinahya.jni;
+package com.github.jinahya.jni.c;
 
 
+import com.github.jinahya.jni.c.stdint;
 import com.github.jinahya.jnic.JniTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import java.util.Optional;

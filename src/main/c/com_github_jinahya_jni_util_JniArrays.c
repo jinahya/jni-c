@@ -9,7 +9,7 @@
 void JNI_ReverseByteArray(JNIEnv * env, const jbyteArray array) {
   jbyte * bytes = (*env)->GetByteArrayElements(env, array, NULL);
   if (bytes != NULL) {
-    array_reverse(bytes, 0, (size_t) (*env)->GetArrayLength(env, array), sizeof (char));
+    array_reverse_ol(bytes, 0, (size_t) (*env)->GetArrayLength(env, array), sizeof (char));
     (*env)->ReleaseByteArrayElements(env, array, bytes, 0);
   }
 }

@@ -8,6 +8,7 @@ extern "C" {
 #endif
 
   jobject java_nio_ByteOrder_BIG_ENDIAN(JNIEnv *);
+
   jobject java_nio_ByteOrder_LITTLE_ENDIAN(JNIEnv *);
 
   jobject java_nio_ByteOrder_nativeOrder(JNIEnv *);

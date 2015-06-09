@@ -7,7 +7,7 @@
 extern "C" {
 #endif
 
-  int array_reverse(void *, const size_t, const size_t, const size_t);
+  int array_reverse_ol(void *, const size_t, const size_t, const size_t);
 
   char * array_from_value(const void *, const size_t);
   char * array_from_value_be(const void *, const size_t);

@@ -8,6 +8,7 @@
 extern "C" {
 #endif
 
+  // ---------------------------------------------------------- New<Type>ObjectA
   jobject JNI_NewObjectA_CNMS(JNIEnv *, const char *, const char *, jvalue *);
   jobject JNI_NewObjectV_CNMS(JNIEnv *, const char *, const char *, va_list);
 
