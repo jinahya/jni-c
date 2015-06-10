@@ -12,10 +12,10 @@ extern "C" {
 #define IS_BIG_ENDIAN1 (*(uint16_t *)"\0\xFF" < 0x100)
 #endif//IS_BIG_ENDIAN1
 
-  inline int is_big_endian2() {
-    const uint16_t v = 0x0001;
-    return *((uint8_t *) (&v)) == 0x00;
-  }
+  //  inline int is_big_endian2() {
+  //    const uint16_t v = 0x0001;
+  //    return *((uint8_t *) (&v)) == 0x00;
+  //  }
   //
   //#ifndef IS_BIG_ENDIAN2
   //#define IS_BIG_ENDIAN2 (uint16_t *)

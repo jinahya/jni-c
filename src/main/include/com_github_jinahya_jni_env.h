@@ -8,31 +8,48 @@ extern "C" {
 #endif
 
   // --------------------------------------------------------------- AllocObject
-  jobject AllocObjectCn(JNIEnv *, const char *);
+  jobject JNE_AllocObject_Cn(JNIEnv *, const char *);
 
   // ------------------------------------------------------- AttachCurrentThread
 
-  // ---------------------------------------------------------- Call<Type>Method
+  // --------------------------------------------------------- Call<Type>Method
   //void CallVoidMethodMnMs(JNIEnv *, jobject, char *, char *, ...);
 
 
-  // --------------------------------------------------------- Call<Type>MethodA
-  void CallVoidMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jobject CallObjectMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jboolean CallBooleanMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jbyte CallByteMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jchar CallCharMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jshort CallShortMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jint CallIntMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jlong CallLongMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jfloat CallFloatMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
-  jdouble CallDoubleMethodANmMs(JNIEnv *, jobject, char *, char *, jvalue *);
+  // -------------------------------------------------------- Call<Type>MethodA
+  void JNE_CallVoidMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jobject JNE_CallObjectMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jboolean JNE_CallBooleanMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jbyte JNE_CallByteMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jchar JNE_CallCharMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jshort JNE_CallShortMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jint JNE_CallIntMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jlong JNE_CallLongMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jfloat JNE_CallFloatMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
+  jdouble JNE_CallDoubleMethodA_Mn_Ms(JNIEnv *, jobject, char *, char *, jvalue *);
 
-  // ------------------------------------------------------ GetStatic<Type>Field
+  // -------------------------------------------------------- Call<Type>MethodV
+  // ----------------------------------------------- CallNonvirtual<Type>Method
+  // ---------------------------------------------- CallNonvirtual<Type>MethodA
+  // ---------------------------------------------- CallNonvirtual<Type>MethodV
+  // --------------------------------------------------- CallStatic<Type>Method
+  // -------------------------------------------------- CallStatic<Type>MethodA
+  // -------------------------------------------------- CallStatic<Type>MethodV
 
-  jobject GetStaticObjectFieldCnFnFs(JNIEnv *, const char *, const char *, const char *);
 
-  jboolean GetStaticBooleanFieldCnFnFs(JNIEnv *, const char *, const char *, const char *);
+  // ----------------------------------------------------- GetStatic<Type>Field
+
+  jobject JNE_GetStaticObjectField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+
+  jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jbyte JNE_GetStaticByteField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jchar JNE_GetStaticCharField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jshort JNE_GetStaticShortField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jint JNE_GetStaticIntField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jlong JNE_GetStaticLongField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jfloat JNE_GetStaticFloatField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  jdouble JNE_GetStaticDoubleField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
 
 #ifdef __cplusplus
 }
