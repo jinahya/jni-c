@@ -7,7 +7,7 @@
 // ----------------------------------------------------------------- AllocObject
 
 jobject JNE_AllocObject_Cn(JNIEnv * env, const char * cname) {
-  jobject result;
+  jobject result = 0;
   jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     result = (*env)->AllocObject(env, clazz);
@@ -33,7 +33,7 @@ void JNE_CallVoidMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * m
 }
 
 jobject JNE_CallObjectdMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jobject result;
+  jobject result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -44,7 +44,7 @@ jobject JNE_CallObjectdMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, ch
 }
 
 jboolean JNE_CallBooleanMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jboolean result;
+  jboolean result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -55,7 +55,7 @@ jboolean JNE_CallBooleanMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, c
 }
 
 jbyte JNE_CallByteMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jbyte result;
+  jbyte result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -66,7 +66,7 @@ jbyte JNE_CallByteMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * 
 }
 
 jchar JNE_CallCharMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jchar result;
+  jchar result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -77,7 +77,7 @@ jchar JNE_CallCharMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * 
 }
 
 jshort JNE_CallShortMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jshort result;
+  jshort result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -88,7 +88,7 @@ jshort JNE_CallShortMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char 
 }
 
 jint JNE_CallIntMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jint result;
+  jint result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -99,7 +99,7 @@ jint JNE_CallIntMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * ms
 }
 
 jlong JNE_CallLongMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jlong result;
+  jlong result = 0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -110,7 +110,7 @@ jlong JNE_CallLongMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * 
 }
 
 jfloat JNE_CallFloatMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jfloat result;
+  jfloat result = .0f;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -121,7 +121,7 @@ jfloat JNE_CallFloatMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char 
 }
 
 jdouble JNE_CallDoubleMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, char * msig, jvalue * args) {
-  jdouble result;
+  jdouble result = .0;
   jclass clazz = (*env)->GetObjectClass(env, obj);
   jmethodID methodID = (*env)->GetMethodID(env, clazz, mname, msig);
   if (methodID == NULL) {
@@ -136,7 +136,7 @@ jdouble JNE_CallDoubleMethodA_Mn_Ms(JNIEnv * env, jobject obj, char * mname, cha
 // ------------------------------------------------------- GetStatic<Type>Field
 
 jobject JNE_GetStaticObjectField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jobject result;
+  jobject result = 0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -149,7 +149,7 @@ jobject JNE_GetStaticObjectField_Cn_Fn_Fs(JNIEnv * env, const char * cname, cons
 }
 
 jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jboolean result;
+  jboolean result = 0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -162,7 +162,7 @@ jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv * env, const char * cname, co
 }
 
 jbyte JNE_GetStaticByteField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jbyte result;
+  jbyte result = 0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -175,7 +175,7 @@ jbyte JNE_GetStaticByteField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const ch
 }
 
 jchar JNE_GetStaticCharField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jchar result;
+  jchar result = 0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -188,7 +188,7 @@ jchar JNE_GetStaticCharField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const ch
 }
 
 jshort JNE_GetStaticShortField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jshort result;
+  jshort result = 0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -201,7 +201,7 @@ jshort JNE_GetStaticShortField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const 
 }
 
 jint JNE_GetStaticIntField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jint result;
+  jint result = 0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -214,7 +214,7 @@ jint JNE_GetStaticIntField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char
 }
 
 jlong JNE_GetStaticLongField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jlong result;
+  jlong result = 0L;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -227,7 +227,7 @@ jlong JNE_GetStaticLongField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const ch
 }
 
 jfloat JNE_GetStaticFloatField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jfloat result;
+  jfloat result = .0f;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
@@ -240,7 +240,7 @@ jfloat JNE_GetStaticFloatField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const 
 }
 
 jdouble JNE_GetStaticDoubleField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jdouble result;
+  jdouble result = .0;
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
