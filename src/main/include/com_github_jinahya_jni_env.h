@@ -33,14 +33,36 @@ extern "C" {
   // ---------------------------------------------- CallNonvirtual<Type>MethodA
   // ---------------------------------------------- CallNonvirtual<Type>MethodV
   // --------------------------------------------------- CallStatic<Type>Method
-  // -------------------------------------------------- CallStatic<Type>MethodA
+
+  // --------------------------------------------------- CallStatic<Type>MethodA
+  void JNE_CallStaticVoidMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jobject JNE_CallStaticObjectMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jboolean JNE_CallStaticBooleanMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jbyte JNE_CallStaticByteMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jchar JNE_CallStaticCharMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jshort JNE_CallStaticShortMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jint JNE_CallStaticIntMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jlong JNE_CallStaticLongMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jfloat JNE_CallStaticFloatMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+  jdouble JNE_CallStaticDoubleMethodA_Cn_Mn_Ms(JNIEnv *, const char *, const char *, const char *, jvalue *);
+
+  void JNE_CallStaticVoidMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jobject JNE_CallStaticObjectMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jboolean JNE_CallStaticBooleanMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jbyte JNE_CallStaticByteMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jchar JNE_CallStaticCharMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jshort JNE_CallStaticShortMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jint JNE_CallStaticIntMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jlong JNE_CallStaticLongMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jfloat JNE_CallStaticFloatMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+  jdouble JNE_CallStaticDoubleMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
+
   // -------------------------------------------------- CallStatic<Type>MethodV
 
 
-  // ----------------------------------------------------- GetStatic<Type>Field
+  // ------------------------------------------------------ GetStatic<Type>Field
 
   jobject JNE_GetStaticObjectField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
-
   jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jbyte JNE_GetStaticByteField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
