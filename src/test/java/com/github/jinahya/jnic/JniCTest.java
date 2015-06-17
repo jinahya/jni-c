@@ -30,7 +30,7 @@ import org.testng.annotations.BeforeTest;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public abstract class JniTest {
+public abstract class JniCTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());

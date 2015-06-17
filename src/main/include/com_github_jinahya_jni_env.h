@@ -57,13 +57,27 @@ extern "C" {
   jfloat JNE_CallStaticFloatMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
   jdouble JNE_CallStaticDoubleMethodA_Mn_Ms(JNIEnv *, jclass, const char *, const char *, jvalue *);
 
-  // -------------------------------------------------- CallStatic<Type>MethodV
+  // --------------------------------------------------- CallStatic<Type>MethodV
+
+
+  // ------------------------------------------------------------ Get<Type>Field
+
+  jobject JNE_GetObjectField_Fn_Fs(JNIEnv *, const jobject, const char *, const char *);
+  jobject JNE_GetObjectField_Fn(JNIEnv *, const jobject, const char *);
+  jboolean JNE_GetBooleanField_Fn(JNIEnv *, const jobject, const char *);
+  jbyte JNE_GetByteField_Fn(JNIEnv *, const jobject, const char *);
+  jchar JNE_GetCharField_Fn(JNIEnv *, const jobject, const char *);
+  jshort JNE_GetShortField_Fn(JNIEnv *, const jobject, const char *);
+  jint JNE_GetIntField_Fn(JNIEnv *, const jobject, const char *);
+  jlong JNE_GetLongField_Fn(JNIEnv *, const jobject, const char *);
+  jfloat JNE_GetFloatField_Fn(JNIEnv *, const jobject, const char *);
+  jdouble JNE_GetDoubleField_Fn(JNIEnv *, const jobject, const char *);
 
 
   // ------------------------------------------------------ GetStatic<Type>Field
 
   jobject JNE_GetStaticObjectField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
-  jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+  //jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jbyte JNE_GetStaticByteField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jchar JNE_GetStaticCharField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
@@ -72,6 +86,34 @@ extern "C" {
   jlong JNE_GetStaticLongField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jfloat JNE_GetStaticFloatField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
   jdouble JNE_GetStaticDoubleField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *);
+
+
+  // ------------------------------------------------------------ Set<Type>Field
+
+  void JNE_SetObjectField_Fn_Fs(JNIEnv *, const jobject, const char *, const char *, const jobject);
+  void JNE_SetObjectField_Fn(JNIEnv *, const jobject, const char *, const jobject);
+  void JNE_SetBooleanField_Fn(JNIEnv *, const jobject, const char *, const jboolean);
+  void JNE_SetByteField_Fn(JNIEnv *, const jobject, const char *, const jbyte);
+  void JNE_SetCharField_Fn(JNIEnv *, const jobject, const char *, const jchar);
+  void JNE_SetShortField_Fn(JNIEnv *, const jobject, const char *, const jshort);
+  void JNE_SetIntField_Fn(JNIEnv *, const jobject, const char *, const jint);
+  void JNE_SetLongField_Fn(JNIEnv *, const jobject, const char *, const jlong);
+  void JNE_SetFloatField_Fn(JNIEnv *, const jobject, const char *, const jfloat);
+  void JNE_SetDoubleField_Fn(JNIEnv *, const jobject, const char *, const jdouble);
+
+
+  // ------------------------------------------------------ SetStatic<Type>Field
+
+  void JNE_SetStaticObjectField_Cn_Fn_Fs(JNIEnv *, const char *, const char *, const char *, const jobject);
+  void JNE_SetStaticObjectField_Cn_Fn(JNIEnv *, const char *, const char *, const jobject);
+  void JNE_SetStaticBooleanField_Cn_Fn(JNIEnv *, const char *, const char *, const jboolean);
+  void JNE_SetStaticByteField_Cn_Fn(JNIEnv *, const char *, const char *, const jbyte);
+  void JNE_SetStaticCharField_Cn_Fn(JNIEnv *, const char *, const char *, const jchar);
+  void JNE_SetStaticShortField_Cn_Fn(JNIEnv *, const char *, const char *, const jshort);
+  void JNE_SetStaticIntField_Cn_Fn(JNIEnv *, const char *, const char *, const jint);
+  void JNE_SetStaticLongField_Cn_Fn(JNIEnv *, const char *, const char *, const jlong);
+  void JNE_SetStaticFloatField_Cn_Fn(JNIEnv *, const char *, const char *, const jfloat);
+  void JNE_SetStaticDoubleField_Cn_Fn(JNIEnv *, const char *, const char *, const jdouble);
 
 #ifdef __cplusplus
 }

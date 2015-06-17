@@ -354,121 +354,334 @@ jdouble JNE_CallStaticDoubleMethodA_Mn_Ms(JNIEnv * env, jclass clazz, const char
 
 
 
-// -------------------------------------------------------- GetStatic<Type>Field
 
-jobject JNE_GetStaticObjectField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
-  jobject result = 0;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticObjectField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------------------- Get<Type>Field
+
+jobject JNE_GetObjectField_Fn_Fs(JNIEnv * env, const jobject obj, const char * fname, const char * fsig) {
+  jobject result = NULL;
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
+  if (fieldID != NULL) {
+    result = (*env)->GetObjectField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jboolean JNE_GetStaticBooleanField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jobject JNE_GetObjectField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
+  return JNE_GetObjectField_Fn_Fs(env, obj, fname, "Ljava/lang/Object;");
+}
+
+jboolean JNE_GetBooleanField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jboolean result = 0;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticBooleanField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "Z");
+  if (fieldID != NULL) {
+    result = (*env)->GetBooleanField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jbyte JNE_GetStaticByteField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jbyte JNE_GetByteField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jbyte result = 0;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticByteField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "B");
+  if (fieldID != NULL) {
+    result = (*env)->GetByteField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jchar JNE_GetStaticCharField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jchar JNE_GetCharField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jchar result = 0;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticCharField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "C");
+  if (fieldID != NULL) {
+    result = (*env)->GetCharField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jshort JNE_GetStaticShortField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jshort JNE_GetShortField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jshort result = 0;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticShortField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "S");
+  if (fieldID != NULL) {
+    result = (*env)->GetShortField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jint JNE_GetStaticIntField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jint JNE_GetIntField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jint result = 0;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticIntField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "I");
+  if (fieldID != NULL) {
+    result = (*env)->GetIntField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jlong JNE_GetStaticLongField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jlong JNE_GetLongField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jlong result = 0L;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticLongField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "J");
+  if (fieldID != NULL) {
+    result = (*env)->GetLongField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jfloat JNE_GetStaticFloatField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jfloat JNE_GetFloatField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jfloat result = .0f;
-  const jclass clazz = (*env)->FindClass(env, cname);
-  if (clazz != NULL) {
-    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
-    if (fieldID != NULL) {
-      result = (*env)->GetStaticFloatField(env, NULL, fieldID);
-    }
-    (*env)->DeleteLocalRef(env, clazz);
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "F");
+  if (fieldID != NULL) {
+    result = (*env)->GetFloatField(env, obj, fieldID);
   }
+  (*env)->DeleteLocalRef(env, clazz);
   return result;
 }
 
-jdouble JNE_GetStaticDoubleField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig) {
+jdouble JNE_GetDoubleField_Fn(JNIEnv * env, const jobject obj, const char * fname) {
   jdouble result = .0;
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "D");
+  if (fieldID != NULL) {
+    result = (*env)->GetDoubleField(env, obj, fieldID);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+  return result;
+}
+
+
+
+
+
+
+
+// -------------------------------------------------------------- Set<Type>Field
+
+void JNE_SetObjectField_Fn_Fs(JNIEnv * env, const jobject obj, const char * fname, const char * fsig, jobject value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, fsig);
+  if (fieldID != NULL) {
+    (*env)->SetObjectField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetObjectField_Fn(JNIEnv * env, const jobject obj, const char * fname, jobject value) {
+  JNE_SetObjectField_Fn_Fs(env, obj, fname, "Ljava/lang/Object;", value);
+}
+
+void JNE_SetBooleanField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jboolean value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "Z");
+  if (fieldID != NULL) {
+    (*env)->SetBooleanField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetByteField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jbyte value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "B");
+  if (fieldID != NULL) {
+    (*env)->SetByteField(env, clazz, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetCharField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jchar value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "C");
+  if (fieldID != NULL) {
+    (*env)->SetCharField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetShortField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jshort value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "S");
+  if (fieldID != NULL) {
+    (*env)->SetShortField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetIntField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jint value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "I");
+  if (fieldID != NULL) {
+    (*env)->SetIntField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetLongField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jlong value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "J");
+  if (fieldID != NULL) {
+    (*env)->SetLongField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetFloatField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jfloat value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "F");
+  if (fieldID != NULL) {
+    (*env)->SetFloatField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+void JNE_SetDoubleField_Fn(JNIEnv * env, const jobject obj, const char * fname, const jdouble value) {
+  const jclass clazz = (*env)->GetObjectClass(env, obj);
+  const jfieldID fieldID = (*env)->GetFieldID(env, clazz, fname, "D");
+  if (fieldID != NULL) {
+    (*env)->SetDoubleField(env, obj, fieldID, value);
+  }
+  (*env)->DeleteLocalRef(env, clazz);
+}
+
+
+
+
+
+
+
+
+
+
+
+// -------------------------------------------------------- SetStatic<Type>Field
+
+void JNE_SetStaticObjectField_Cn_Fn_Fs(JNIEnv * env, const char * cname, const char * fname, const char * fsig, jobject value) {
   const jclass clazz = (*env)->FindClass(env, cname);
   if (clazz != NULL) {
     const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, fsig);
     if (fieldID != NULL) {
-      result = (*env)->GetStaticDoubleField(env, NULL, fieldID);
+      (*env)->SetStaticObjectField(env, clazz, fieldID, value);
     }
     (*env)->DeleteLocalRef(env, clazz);
   }
-  return result;
+}
+
+void JNE_SetStaticObjectField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, jobject value) {
+  JNE_SetStaticObjectField_Cn_Fn_Fs(env, cname, fname, "Ljava/lang/Object;", value);
+}
+
+void JNE_SetStaticBooleanField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jboolean value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "Z");
+    if (fieldID != NULL) {
+      (*env)->SetStaticBooleanField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticByteField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jbyte value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "B");
+    if (fieldID != NULL) {
+      (*env)->SetStaticByteField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticCharField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jchar value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "C");
+    if (fieldID != NULL) {
+      (*env)->SetStaticCharField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticShortField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jshort value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "S");
+    if (fieldID != NULL) {
+      (*env)->SetStaticShortField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticIntField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jint value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "I");
+    if (fieldID != NULL) {
+      (*env)->SetStaticIntField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticLongField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jlong value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "J");
+    if (fieldID != NULL) {
+      (*env)->SetStaticLongField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticFloatField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jfloat value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "F");
+    if (fieldID != NULL) {
+      (*env)->SetStaticFloatField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
+}
+
+void JNE_SetStaticDoubleField_Cn_Fn(JNIEnv * env, const char * cname, const char * fname, const jdouble value) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    const jfieldID fieldID = (*env)->GetStaticFieldID(env, clazz, fname, "D");
+    if (fieldID != NULL) {
+      (*env)->SetStaticDoubleField(env, clazz, fieldID, value);
+    }
+    (*env)->DeleteLocalRef(env, clazz);
+  }
 }

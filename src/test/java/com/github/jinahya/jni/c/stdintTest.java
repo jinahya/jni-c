@@ -18,8 +18,7 @@
 package com.github.jinahya.jni.c;
 
 
-import com.github.jinahya.jni.c.stdint;
-import com.github.jinahya.jnic.JniTest;
+import com.github.jinahya.jnic.JniCTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -33,7 +32,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class stdintTest extends JniTest {
+public class stdintTest extends JniCTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());

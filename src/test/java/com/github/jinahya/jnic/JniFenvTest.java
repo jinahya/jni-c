@@ -28,7 +28,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniFenvTest extends JniTest {
+public class JniFenvTest extends JniCTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());

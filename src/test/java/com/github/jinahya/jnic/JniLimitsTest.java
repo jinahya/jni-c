@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniLimitsTest extends JniTest {
+public class JniLimitsTest extends JniCTest {
 
 
     private static final Logger logger = getLogger(lookup().lookupClass());
