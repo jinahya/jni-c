@@ -685,3 +685,15 @@ void JNE_SetStaticDoubleField_Cn_Fn(JNIEnv * env, const char * cname, const char
     (*env)->DeleteLocalRef(env, clazz);
   }
 }
+
+
+
+// -------------------------------------------------------------------- ThrowNew
+
+jint JNE_ThrowNew_Cn(JNIEnv *env, const char * cname, const char * message) {
+  const jclass clazz = (*env)->FindClass(env, cname);
+  if (clazz != NULL) {
+    return (*env)->ThrowNew(env, clazz, message);
+  }
+  return 0;
+}

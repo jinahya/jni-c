@@ -12,7 +12,7 @@ extern "C" {
 
   // ------------------------------------------------------- AttachCurrentThread
 
-  // --------------------------------------------------------- Call<Type>Method
+  // ---------------------------------------------------------- Call<Type>Method
   //void CallVoidMethodMnMs(JNIEnv *, jobject, char *, char *, ...);
 
 
@@ -114,6 +114,10 @@ extern "C" {
   void JNE_SetStaticLongField_Cn_Fn(JNIEnv *, const char *, const char *, const jlong);
   void JNE_SetStaticFloatField_Cn_Fn(JNIEnv *, const char *, const char *, const jfloat);
   void JNE_SetStaticDoubleField_Cn_Fn(JNIEnv *, const char *, const char *, const jdouble);
+
+
+  // ------------------------------------------------------------------ ThrowNew
+  jint JNE_ThrowNew_Cn(JNIEnv *env, const char * cname, const char * message);
 
 #ifdef __cplusplus
 }
