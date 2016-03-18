@@ -2,19 +2,19 @@
 #include "com_github_jinahya_jni_c_jstdio.h"
 #include <stdio.h>
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio__1IOFBF(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio__1IOFBF(JNIEnv *env, jclass cls) {
   return _IOFBF;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio__1IOLBF(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio__1IOLBF(JNIEnv *env, jclass cls) {
   return _IOLBF;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio__1IONBF(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio__1IONBF(JNIEnv *env, jclass cls) {
   return _IONBF;
 }
 
-//JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniStdio_stdout_1(JNIEnv *env, jclass cls) {
+//JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jstdio_stdout_1(JNIEnv *env, jclass cls) {
 //  if (stdout == NULL) return NULL;
 //  int stdoutno = fileno(stdout);
 //  if (stdoutno == -1) return NULL;
@@ -35,43 +35,43 @@ JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio__1IONBF(JNIEnv *env
 //  return instance_fd;
 //}
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_BUFSIZ(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_BUFSIZ(JNIEnv *env, jclass cls) {
   return BUFSIZ;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_EOF(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_EOF(JNIEnv *env, jclass cls) {
   return EOF;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_FOPEN_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_FOPEN_1MAX(JNIEnv *env, jclass cls) {
   return FOPEN_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_FILENAME_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_FILENAME_1MAX(JNIEnv *env, jclass cls) {
   return FILENAME_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_SEEK_1SET(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_SEEK_1SET(JNIEnv *env, jclass cls) {
   return SEEK_SET;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_SEEK_1CUR(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_SEEK_1CUR(JNIEnv *env, jclass cls) {
   return SEEK_CUR;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_SEEK_1END(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_SEEK_1END(JNIEnv *env, jclass cls) {
   return SEEK_END;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_getc(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_getc(JNIEnv *env, jclass cls) {
   return getchar();
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_putchar(JNIEnv *env, jclass cls, jint ch) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_putchar(JNIEnv *env, jclass cls, jint ch) {
   return putchar(ch);
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio_puts(JNIEnv *env, jclass cls, jbyteArray src) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdio_puts(JNIEnv *env, jclass cls, jbyteArray src) {
   if (src == NULL) return -1;
   jbyte *s = (*env)->GetByteArrayElements(env, src, NULL);
   if (s == NULL) return -1;

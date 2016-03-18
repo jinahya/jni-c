@@ -19,7 +19,7 @@ package com.github.jinahya.jni.c;
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class time11 {
+public class jtime11 {
 
     public static class struct_timespec {
 

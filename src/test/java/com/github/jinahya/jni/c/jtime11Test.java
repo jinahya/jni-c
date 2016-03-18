@@ -19,19 +19,20 @@ import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class time11Test extends JniCTest {
+public class jtime11Test extends JniCTest {
 
     private static final Logger logger = getLogger(lookup().lookupClass());
 
     @Test(enabled = true)
     public static void TIME_UTC() {
 
-        logger.debug("TIME_UTC: {}", time11.TIME_UTC);
+        logger.debug("TIME_UTC: {}", jtime11.TIME_UTC);
     }
 
     @Test(enabled = false)

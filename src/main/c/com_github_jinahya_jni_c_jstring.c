@@ -2,7 +2,7 @@
 #include "com_github_jinahya_jni_c_jstring.h"
 #include <string.h>
 
-JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniString_strcat(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_c_jstring_strcat(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
   //if (dst == NULL) return dst;
   //if (src == NULL) return dst;
   if (dst == NULL || src == NULL) return dst;
@@ -14,7 +14,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniString_strcat(JNIEn
   return dst;
 }
 
-JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniString_strcpy(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_c_jstring_strcpy(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {
   //if (dst == NULL) return dst;
   //if (src == NULL) return dst;
   if (dst == NULL || src == NULL) return dst;

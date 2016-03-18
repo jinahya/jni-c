@@ -4,27 +4,27 @@
 #include <stdlib.h>
 #include <string.h>
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_Stdlib_EXIT_1FAILURE(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdlib_EXIT_1FAILURE(JNIEnv *env, jclass cls) {
   return (jint) EXIT_FAILURE;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_Stdlib_EXIT_1SUCCESS(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdlib_EXIT_1SUCCESS(JNIEnv *env, jclass cls) {
   return (jint) EXIT_SUCCESS;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_Stdlib_RAND_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdlib_RAND_1MAX(JNIEnv *env, jclass cls) {
   return (jint) RAND_MAX;
 }
 
-JNIEXPORT void JNICALL Java_com_github_jinahya_jni_c_Stdlib_abort(JNIEnv *env, jclass cls) {
+JNIEXPORT void JNICALL Java_com_github_jinahya_jni_c_jstdlib_abort(JNIEnv *env, jclass cls) {
   abort();
 }
 
-JNIEXPORT void JNICALL Java_com_github_jinahya_jni_c_Stdlib_exit(JNIEnv *env, jclass cls, jint exit_code) {
+JNIEXPORT void JNICALL Java_com_github_jinahya_jni_c_jstdlib_exit(JNIEnv *env, jclass cls, jint exit_code) {
   exit((int) exit_code);
 }
 
-JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_Stdlib_getenv(JNIEnv *env, jclass cls, jbyteArray jname) {
+JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_jstdlib_getenv(JNIEnv *env, jclass cls, jbyteArray jname) {
   if (jname == NULL) {
     const jclass clazz = (*env)->FindClass(env, "java/lang/NullPointerException");
     if (clazz != NULL) {
@@ -48,15 +48,15 @@ JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_Stdlib_getenv(JNIEnv *en
   return NULL;
 }
 
-JNIEXPORT int JNICALL Java_com_github_jinahya_jni_c_Stdlib_rand(JNIEnv *env, jclass cls) {
+JNIEXPORT int JNICALL Java_com_github_jinahya_jni_c_jstdlib_rand(JNIEnv *env, jclass cls) {
   return rand();
 }
 
-JNIEXPORT void JNICALL Java_com_github_jinahya_jni_c_Stdlib_srand(JNIEnv *env, jclass cls, jlong seed) {
+JNIEXPORT void JNICALL Java_com_github_jinahya_jni_c_jstdlib_srand(JNIEnv *env, jclass cls, jlong seed) {
   srand((unsigned) seed);
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_Stdlib_system(JNIEnv *env, jclass cls, jbyteArray jcommand) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jstdlib_system(JNIEnv *env, jclass cls, jbyteArray jcommand) {
   jbyte * ccommand = NULL;
   if (jcommand != NULL) {
     ccommand = (*env)->GetByteArrayElements(env, jcommand, NULL);

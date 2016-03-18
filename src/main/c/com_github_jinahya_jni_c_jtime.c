@@ -1,36 +1,36 @@
-#include "com_github_jinahya_jni_c_time.h"
+#include "com_github_jinahya_jni_c_jtime.h"
 #include <jni.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include "com_github_jinahya_jni_env.h"
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_time_sizeof_1time_1t(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jtime_sizeof_1time_1t(JNIEnv *env, jclass cls) {
   return (jint) (sizeof (time_t));
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_time_sizeof_1clock_1t(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jtime_sizeof_1clock_1t(JNIEnv *env, jclass cls) {
   return (jint) (sizeof (clock_t));
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_time_sizeof_1tm(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jtime_sizeof_1tm(JNIEnv *env, jclass cls) {
   return (jint) (sizeof (struct tm));
 }
 
-JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_time_time(JNIEnv *env, jclass cls) {
+JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_jtime_time(JNIEnv *env, jclass cls) {
   return (jlong) time(NULL);
 }
 
-JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_time_clock(JNIEnv *env, jclass cls) {
+JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_jtime_clock(JNIEnv *env, jclass cls) {
   return (jlong) clock();
 }
 
-JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_time_ctime(JNIEnv *env, jclass cls, jlong time) {
+JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_jtime_ctime(JNIEnv *env, jclass cls, jlong time) {
   const char * result = ctime((time_t *) (& time));
   return (*env)->NewStringUTF(env, result);
 }
 
-JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_time_asctime(JNIEnv *env, jclass cls, jobject jtm) {
+JNIEXPORT jstring JNICALL Java_com_github_jinahya_jni_c_jtime_asctime(JNIEnv *env, jclass cls, jobject jtm) {
   //  const struct tm time;
   //  time.tm_sec = (int) JNE_GetIntField_Fn(env, jtm, "tm_sec");
   //  time.tm_min = (int) JNE_GetIntField_Fn(env, jtm, "tm_min");

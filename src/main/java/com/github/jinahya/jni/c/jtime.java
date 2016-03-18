@@ -22,7 +22,7 @@ import java.util.function.LongConsumer;
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class time {
+public class jtime {
 
     public static class tm {
 
