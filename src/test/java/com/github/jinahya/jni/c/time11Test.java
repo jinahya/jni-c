@@ -13,17 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.jni.c;
 
-
-import com.github.jinahya.jnic.JniCTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
-
 
 /**
  *
@@ -31,16 +26,13 @@ import org.testng.annotations.Test;
  */
 public class time11Test extends JniCTest {
 
-
     private static final Logger logger = getLogger(lookup().lookupClass());
-
 
     @Test(enabled = true)
     public static void TIME_UTC() {
 
         logger.debug("TIME_UTC: {}", time11.TIME_UTC);
     }
-
 
     @Test(enabled = false)
     public static void sizeof_struct_timespec() {
@@ -49,6 +41,4 @@ public class time11Test extends JniCTest {
         //logger.debug("sizeof_struct_timespec: {}", sizeof_struct_timespec);
     }
 
-
 }
-

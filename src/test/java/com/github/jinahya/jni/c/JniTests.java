@@ -1,6 +1,4 @@
-
-
-package com.github.jinahya.jnic;
+package com.github.jinahya.jni.c;
 
 
 /*
@@ -24,9 +22,6 @@ package com.github.jinahya.jnic;
  */
 public class JniTests {
 
-
-    static final String LIB_NAME = "jnic-0.0.1-SNAPSHOT";
-
+    static final String LIB_NAME = "jni-c-0.0.1-SNAPSHOT";
 
 }
-

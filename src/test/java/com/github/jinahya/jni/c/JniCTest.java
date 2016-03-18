@@ -13,10 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-
-
-package com.github.jinahya.jnic;
-
+package com.github.jinahya.jni.c;
 
 import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
@@ -25,42 +22,30 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
-
 /**
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
 public abstract class JniCTest {
 
-
     private static final Logger logger = getLogger(lookup().lookupClass());
 
-
     static {
-        System.loadLibrary(JniTests.LIB_NAME);
+        //System.loadLibrary(JniTests.LIB_NAME);
     }
-
 
     @BeforeSuite(enabled = false)
     public static void loadLibrary() {
-
-        System.loadLibrary(JniTests.LIB_NAME);
+        //System.loadLibrary(JniTests.LIB_NAME);
     }
-
 
     @BeforeTest
     public void printNameBeforeTest() {
-
         logger.debug("================= BEFORE {}", getClass().getSimpleName());
     }
 
-
     @AfterTest
     public void printNameAfterTest() {
-
         logger.debug("=================  AFTER {}", getClass().getSimpleName());
     }
-
-
 }
-

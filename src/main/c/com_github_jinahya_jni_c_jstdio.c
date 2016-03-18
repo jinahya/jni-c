@@ -1,5 +1,5 @@
 #include <jni.h>
-#include "com_github_jinahya_jnic_JniStdio.h"
+#include "com_github_jinahya_jni_c_jstdio.h"
 #include <stdio.h>
 
 JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniStdio__1IOFBF(JNIEnv *env, jclass cls) {

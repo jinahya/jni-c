@@ -2,7 +2,7 @@
 #include "com_github_jinahya_array.h"
 #include "com_github_jinahya_jni_util_JniArrays.h"
 #include "com_github_jinahya_jni_util_JniObjects.h"
-#include "com_github_jinahya_jni_c_stdint.h"
+#include "com_github_jinahya_jni_c_jstdint.h"
 #include <stdint.h>
 #include <stdio.h>
 

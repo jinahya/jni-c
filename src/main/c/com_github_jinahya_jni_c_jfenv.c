@@ -1,20 +1,16 @@
-#include <jni.h>
-#include "com_github_jinahya_jnic_JniFloat.h"
+#include <stdio.h>
 #include <fenv.h>
+#include <jni.h>
+#include "com_github_jinahya_jni_c_jfenv.h"
 #include "com_github_jinahya_jni_util_JniObjects.h"
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1ALL_1EXCEPT(JNIEnv *env, jclass cls) {
-#ifndef FE_ALL_EXCEPT
-  return NULL;
-#else
-  //return NULL;
-  //return FE_ALL_EXCEPT;
-  return JNI_NewJavaLangInteger_V(env, (jint) FE_ALL_EXCEPT);
-#endif
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1ALL_1EXCEPT(JNIEnv *env, jclass cls) {
+  return (jint) FE_ALL_EXCEPT;
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DIVBYZERO(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1DIVBYZERO(JNIEnv *env, jclass cls) {
 #ifndef FE_DIVBYZERO
+  fprintf(stderr, "FE_DIVBYZERO not defined");
   //return -1;
   return NULL;
 #else
@@ -24,7 +20,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DIVBYZERO(JNI
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INEXACT(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1INEXACT(JNIEnv *env, jclass cls) {
 #ifndef FE_INEXACT
   return NULL;
 #else
@@ -33,7 +29,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INEXACT(JNIEn
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INVALID(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1INVALID(JNIEnv *env, jclass cls) {
 #ifndef FE_INVALID
   return NULL;
 #else
@@ -42,7 +38,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1INVALID(JNIEn
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1OVERFLOW(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1OVERFLOW(JNIEnv *env, jclass cls) {
 #ifndef FE_OVERFLOW
   return NULL;
 #else
@@ -51,7 +47,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1OVERFLOW(JNIE
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UNDERFLOW(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1UNDERFLOW(JNIEnv *env, jclass cls) {
 #ifndef FE_UNDERFLOW
   return NULL;
 #else
@@ -60,7 +56,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UNDERFLOW(JNI
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DOWNWARD(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1DOWNWARD(JNIEnv *env, jclass cls) {
 #ifndef FE_DOWNWARD
   return NULL;
 #else
@@ -69,7 +65,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1DOWNWARD(JNIE
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TONEAREST(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1TONEAREST(JNIEnv *env, jclass cls) {
 #ifndef FE_TONEAREST
   return NULL;
 #else
@@ -78,7 +74,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TONEAREST(JNI
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TOWARDZERO(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1TOWARDZERO(JNIEnv *env, jclass cls) {
 #ifndef FE_TOWARDZERO
   return NULL;
 #else
@@ -87,7 +83,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1TOWARDZERO(JN
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UPWARD(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_FE_1UPWARD(JNIEnv *env, jclass cls) {
 #ifndef FE_UPWARD
   return NULL;
 #else
@@ -96,7 +92,7 @@ JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_FE_1UPWARD(JNIEnv
 #endif
 }
 
-JNIEXPORT jobject JNICALL Java_com_github_jinahya_jnic_JniFenv_sizeof_1fenv_1t(JNIEnv *env, jclass cls) {
+JNIEXPORT jobject JNICALL Java_com_github_jinahya_jni_c_jfenv_sizeof_1fenv_1t(JNIEnv *env, jclass cls) {
 #ifndef fenv_t
   return NULL;
 #else

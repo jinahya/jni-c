@@ -13,56 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.jni.c;
-
 
 /**
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class Stdlib {
-
+public class jstdlib {
 
     static native int EXIT_FAILURE();
 
-
     public static final int EXIT_FAILURE = EXIT_FAILURE();
-
 
     static native int EXIT_SUCCESS();
 
-
     public static final int EXIT_SUCCESS = EXIT_SUCCESS();
-
 
     static native int RAND_MAX();
 
-
     public static final int RAND_MAX = RAND_MAX();
-
 
     public static native void abort();
 
-
     public static native void exit(int exit_code);
-
 
     public static native void free(long ptr);
 
-
     public static native String getenv(byte[] name);
-
 
     public static native int rand();
 
-
     public static native void srand(long seed);
-
 
     public static native int system(final byte[] command);
 
-
 }
-

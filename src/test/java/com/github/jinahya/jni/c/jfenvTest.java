@@ -13,114 +13,84 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-
-
-package com.github.jinahya.jnic;
-
+package com.github.jinahya.jni.c;
 
 import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
-import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
-
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniFenvTest extends JniCTest {
-
+public class jfenvTest extends JniCTest {
 
     private static final Logger logger = getLogger(lookup().lookupClass());
 
-
     // ----------------------------------------------------- FE_ALL_EXCEPT (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void FE_ALL_EXCEPT() {
-
-        logger.debug("EF_ALL_EXCEPT: {}", JniFenv.FE_ALL_EXCEPT);
+        logger.debug("FE_ALL_EXCEPT: {}", jfenv.FE_ALL_EXCEPT);
     }
-
 
     // ------------------------------------------------------ FE_DIVBYZERO (C99)
-    @Test(enabled = true)
-    public static void DIVBYZERO() {
-
-        logger.debug("FE_DIVBYZERO: {}", JniFenv.FE_DIVBYZERO);
+    @Test(enabled = false)
+    public static void FE_DIVBYZERO() {
+        logger.debug("FE_DIVBYZERO: {}", jfenv.FE_DIVBYZERO);
     }
-
 
     // -------------------------------------------------------- FE_INEXACT (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void INEXACT() {
-
-        logger.debug("FE_INEXACT: {}", JniFenv.FE_INEXACT);
+        logger.debug("FE_INEXACT: {}", jfenv.FE_INEXACT);
     }
-
 
     // -------------------------------------------------------- FE_INVALID (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void INVALID() {
-
-        logger.debug("FE_INVALID: {}", JniFenv.FE_INVALID);
+        logger.debug("FE_INVALID: {}", jfenv.FE_INVALID);
     }
-
 
     // ------------------------------------------------------- FE_OVERFLOW (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void OVERFLOW() {
-
-        logger.debug("FE_OVERFLOW: {}", JniFenv.FE_OVERFLOW);
+        logger.debug("FE_OVERFLOW: {}", jfenv.FE_OVERFLOW);
     }
-
 
     // ------------------------------------------------------ FE_UNDERFLOW (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void UNDERFLOW() {
-
-        logger.debug("FE_UNDERFLOW: {}", JniFenv.FE_UNDERFLOW);
+        logger.debug("FE_UNDERFLOW: {}", jfenv.FE_UNDERFLOW);
     }
-
 
     // ------------------------------------------------------- FE_DOWNWARD (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void DOWNWARD() {
-
-        logger.debug("FE_DOWNWARD: {}", JniFenv.FE_DOWNWARD);
+        logger.debug("FE_DOWNWARD: {}", jfenv.FE_DOWNWARD);
     }
-
 
     // ------------------------------------------------------ FE_TONEAREST (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void TONEAREST() {
-
-        logger.debug("FE_TONEAREST: {}", JniFenv.FE_TONEAREST);
+        logger.debug("FE_TONEAREST: {}", jfenv.FE_TONEAREST);
     }
-
 
     // ----------------------------------------------------- FE_TOWARDZERO (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void TOWARDZERO() {
-
-        logger.debug("FE_TOWARDZERO: {}", JniFenv.FE_TOWARDZERO);
+        logger.debug("FE_TOWARDZERO: {}", jfenv.FE_TOWARDZERO);
     }
-
 
     // --------------------------------------------------------- FE_UPWARD (C99)
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void UPWARD() {
-
-        logger.debug("FE_UPWARD: {}", JniFenv.FE_UPWARD);
+        logger.debug("FE_UPWARD: {}", jfenv.FE_UPWARD);
     }
-
 
     // ----------------------------------------------------------- sizeof_fenv_t
-    @Test(enabled = true)
+    @Test(enabled = false)
     public static void sizeof_fenv_t() {
-
-        logger.debug("sizeof_fenv_t: {}", JniFenv.size_of_fenv_t);
+        logger.debug("sizeof_fenv_t: {}", jfenv.size_of_fenv_t);
     }
-
-
 }
-

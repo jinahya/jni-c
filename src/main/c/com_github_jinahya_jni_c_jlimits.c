@@ -1,68 +1,68 @@
 #include <jni.h>
-#include "com_github_jinahya_jnic_JniLimits.h"
+#include "com_github_jinahya_jni_c_jlimits.h"
 #include <limits.h>
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_CHAR_1BIT(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_CHAR_1BIT(JNIEnv *env, jclass cls) {
   return CHAR_BIT;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_MB_1LEN_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_MB_1LEN_1MAX(JNIEnv *env, jclass cls) {
   return MB_LEN_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_CHAR_1MIN(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_CHAR_1MIN(JNIEnv *env, jclass cls) {
   return CHAR_MIN;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_CHAR_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_CHAR_1MAX(JNIEnv *env, jclass cls) {
   return CHAR_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_SCHAR_1MIN(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_SCHAR_1MIN(JNIEnv *env, jclass cls) {
   return SCHAR_MIN;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_SCHAR_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_SCHAR_1MAX(JNIEnv *env, jclass cls) {
   return SCHAR_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_UCHAR_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_UCHAR_1MAX(JNIEnv *env, jclass cls) {
   return UCHAR_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_SHRT_1MIN(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_SHRT_1MIN(JNIEnv *env, jclass cls) {
   return SHRT_MIN;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_SHRT_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_SHRT_1MAX(JNIEnv *env, jclass cls) {
   return SHRT_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_USHRT_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_USHRT_1MAX(JNIEnv *env, jclass cls) {
   return USHRT_MAX;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_INT_1MIN(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_INT_1MIN(JNIEnv *env, jclass cls) {
   return INT_MIN;
 }
 
-JNIEXPORT jint JNICALL Java_com_github_jinahya_jnic_JniLimits_INT_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jint JNICALL Java_com_github_jinahya_jni_c_jlimits_INT_1MAX(JNIEnv *env, jclass cls) {
   return INT_MAX;
 }
 
-JNIEXPORT jlong JNICALL Java_com_github_jinahya_jnic_JniLimits_UINT_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_jlimits_UINT_1MAX(JNIEnv *env, jclass cls) {
   return UINT_MAX;
 }
 
-JNIEXPORT jlong JNICALL Java_com_github_jinahya_jnic_JniLimits_LONG_1MIN(JNIEnv *env, jclass cls) {
+JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_jlimits_LONG_1MIN(JNIEnv *env, jclass cls) {
   return LONG_MIN;
 }
 
-JNIEXPORT jlong JNICALL Java_com_github_jinahya_jnic_JniLimits_LONG_1MAX(JNIEnv *env, jclass cls) {
+JNIEXPORT jlong JNICALL Java_com_github_jinahya_jni_c_jlimits_LONG_1MAX(JNIEnv *env, jclass cls) {
   return LONG_MAX;
 }
 
-JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_c_jlimits_ULONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
   const size_t size = (int) sizeof (unsigned long);
   jbyteArray jbytes = (*env)->NewByteArray(env, (jsize) (size + 1));
   if (jbytes != NULL) {
@@ -80,7 +80,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULONG_1MAX_1
   return jbytes;
 }
 
-JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MIN_1BYTES(JNIEnv *env, jclass cls) {
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_c_jlimits_LLONG_1MIN_1BYTES(JNIEnv *env, jclass cls) {
   const size_t size = sizeof (long long);
   jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
   if (result != NULL) {
@@ -98,7 +98,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MIN_1
   return result;
 }
 
-JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_c_jlimits_LLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
   const size_t size = sizeof (long long);
   jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
   if (result != NULL) {
@@ -116,7 +116,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_LLONG_1MAX_1
   return result;
 }
 
-JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniLimits_ULLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
+JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jni_c_jlimits_ULLONG_1MAX_1BYTES(JNIEnv *env, jclass cls) {
   const size_t size = sizeof (unsigned long long);
   jbyteArray result = (*env)->NewByteArray(env, (jsize) size);
   if (result != NULL) {

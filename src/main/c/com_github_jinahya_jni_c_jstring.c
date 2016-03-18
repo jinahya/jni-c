@@ -1,5 +1,5 @@
 #include <jni.h>
-#include "com_github_jinahya_jnic_JniString.h"
+#include "com_github_jinahya_jni_c_jstring.h"
 #include <string.h>
 
 JNIEXPORT jbyteArray JNICALL Java_com_github_jinahya_jnic_JniString_strcat(JNIEnv *env, jclass cls, jbyteArray dst, jbyteArray src) {

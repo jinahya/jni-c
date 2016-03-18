@@ -1,5 +1,3 @@
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;onacit at gmail.com&gt;.
  *
@@ -17,22 +15,16 @@
  */
 package com.github.jinahya.jni.c;
 
-
 /**
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
 public class singal {
 
-
     public static interface handler {
-
 
         void handle(int signal);
 
-
     }
 
-
 }
-

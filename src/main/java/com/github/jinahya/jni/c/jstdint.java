@@ -1,5 +1,3 @@
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;onacit at gmail.com&gt;.
  *
@@ -17,17 +15,14 @@
  */
 package com.github.jinahya.jni.c;
 
-
 import java.math.BigInteger;
-
 
 /**
  * (C99).
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class stdint { // (C99)
-
+public class jstdint { // (C99)
 
     // ------------------------------------------------------- PTRDIFF_MIN (C99)
     /**
@@ -37,9 +32,7 @@ public class stdint { // (C99)
      */
     static native Long PTRDIFF_MIN();
 
-
     public static final Long PTRDIFF_MIN = PTRDIFF_MIN();
-
 
     // ------------------------------------------------------- PTRDIFF_MAX (C99)
     /**
@@ -49,13 +42,10 @@ public class stdint { // (C99)
      */
     static native Long PTRDIFF_MAX();
 
-
     public static final Long PTRDIFF_MAX = PTRDIFF_MAX();
-
 
     // ---------------------------------------------------------- SIZE_MAX (C99)
     static native byte[] SIZE_MAX_BYTES();
-
 
     /**
      * Reads the value of {@code SIZE_MAX} and returns the values as a
@@ -70,68 +60,49 @@ public class stdint { // (C99)
         return bytes == null ? null : new BigInteger(1, bytes);
     }
 
-
     /**
      * The value of {@code SIZE_MAX}. This value may be {@code null} if failed
      * to read.
      */
     public static final BigInteger SIZE_MAX = SIZE_MAX();
 
-
     // ---------------------------------------------------- SIG_ATOMIC_MIN (C99)
     static native Integer SIG_ATOMIC_MIN();
 
-
     public static final Integer SIG_ATOMIC_MIN = SIG_ATOMIC_MIN();
-
 
     // ---------------------------------------------------- SIG_ATOMIC_MAX (C99)
     static native Integer SIG_ATOMIC_MAX();
 
-
     public static final Integer SIG_ATOMIC_MAX = SIG_ATOMIC_MAX();
-
 
     public static final int WCHAR_MIN;
 
-
     static native int WCHAR_MIN();
-
 
     static {
         WCHAR_MIN = WCHAR_MIN();
     }
 
-
     public static final int WCHAR_MAX;
 
-
     static native int WCHAR_MAX();
-
 
     static {
         WCHAR_MAX = WCHAR_MAX();
     }
 
-
     static native long WINT_MIN();
-
 
     public static final long WINT_MIN = WINT_MIN(); // wint_t
 
-
     static native long WINT_MAX();
 
-
     public static final long WINT_MAX = WINT_MAX(); // wint_t
-
 
     // --------------------------------------------------------------- UINT8_MAX
     static native Short UINT8_MAX();
 
-
     public static final Short UINT8_MAX = UINT8_MAX();
 
-
 }
-

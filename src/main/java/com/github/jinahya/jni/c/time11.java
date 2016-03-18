@@ -13,10 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.jni.c;
-
 
 /**
  *
@@ -24,26 +21,18 @@ package com.github.jinahya.jni.c;
  */
 public class time11 {
 
-
     public static class struct_timespec {
-
 
         long tv_sec;
 
-
         long tv_nsec;
-
 
     }
 
-
     static native Integer TIME_UTC();
-
 
     public static final Integer TIME_UTC = TIME_UTC();
     //public static native int sizeof_struct_timespec();
     //public static native int timespec_get(struct_timespec timespec, int base);
 
-
 }
-

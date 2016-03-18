@@ -1,8 +1,3 @@
-
-
-package com.github.jinahya.jnic;
-
-
 /*
  * Copyright 2015 Jin Kwon &lt;jinahya_at_gmail.com&gt;.
  *
@@ -18,20 +13,12 @@ package com.github.jinahya.jnic;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+package com.github.jinahya.jni.c;
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class JniString {
-
-
-    public static native byte[] strcat(byte[] dest, byte[] src);
-
-
-    public static native byte[] strcpy(byte[] dest, byte[] src);
-
+public class JniC {
 
 }
-

@@ -13,14 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.jni.c;
-
 
 import java.util.Calendar;
 import java.util.function.LongConsumer;
-
 
 /**
  *
@@ -28,9 +24,7 @@ import java.util.function.LongConsumer;
  */
 public class time {
 
-
     public static class tm {
-
 
         public static tm newInstance(final Calendar calendar) {
             final tm instance = new tm();
@@ -46,57 +40,39 @@ public class time {
             return instance;
         }
 
-
         public int tm_sec;
-
 
         public int tm_min;
 
-
         public int tm_hour;
-
 
         public int tm_mday;
 
-
         public int tm_mon;
-
 
         public int tm_year;
 
-
         public int tm_wday;
-
 
         public int tm_yday;
 
-
         public int tm_isdst;
-
 
     }
 
-
     static native int sizeof_time_t();
-
 
     public static final int sizeof_time_t = sizeof_time_t();
 
-
     static native int sizeof_clock_t();
-
 
     public static final int sizeof_clock_t = sizeof_clock_t();
 
-
     static native int sizeof_tm();
-
 
     public static final int sizeof_tm = sizeof_tm();
 
-
     public static native long time();
-
 
     public static long time(final LongConsumer consumer) {
 
@@ -109,15 +85,10 @@ public class time {
         return time;
     }
 
-
     public static native long clock();
-
 
     public static native String ctime(long time);
 
-
     public static native String asctime(tm time_ptr);
 
-
 }
-

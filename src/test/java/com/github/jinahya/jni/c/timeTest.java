@@ -13,19 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.jni.c;
 
-
 import com.github.jinahya.jni.c.time.tm;
-import com.github.jinahya.jnic.JniCTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import java.util.Calendar;
 import org.slf4j.Logger;
 import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
-
 
 /**
  *
@@ -33,9 +28,7 @@ import org.testng.annotations.Test;
  */
 public class timeTest extends JniCTest {
 
-
     private static final Logger logger = getLogger(lookup().lookupClass());
-
 
     @Test
     public static void sizeof_time_t() {
@@ -43,20 +36,17 @@ public class timeTest extends JniCTest {
         logger.debug("sizeof_time_t: {}", time.sizeof_time_t);
     }
 
-
     @Test
     public static void sizeof_clock_t() {
 
         logger.debug("sizeof_clock_t: {}", time.sizeof_clock_t);
     }
 
-
     @Test
     public static void sizeof_tm() {
 
         logger.debug("sizeof_tm: {}", time.sizeof_tm);
     }
-
 
     @Test(enabled = true)
     public static void time() {
@@ -65,14 +55,12 @@ public class timeTest extends JniCTest {
         logger.debug("time: {}", value);
     }
 
-
     @Test(enabled = true)
     public static void clock() {
 
         final long value = time.clock();
         logger.debug("clock: {}", value);
     }
-
 
     @Test(enabled = true)
     public static void ctime() {
@@ -82,7 +70,6 @@ public class timeTest extends JniCTest {
         logger.debug("ctime: {}", c);
     }
 
-
     @Test(enabled = true)
     public static void asctime() {
 
@@ -91,6 +78,4 @@ public class timeTest extends JniCTest {
         logger.debug("asctime: {}", result);
     }
 
-
 }
-

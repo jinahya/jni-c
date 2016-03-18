@@ -13,88 +13,71 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
 package com.github.jinahya.jni.c;
 
-
-import com.github.jinahya.jnic.JniCTest;
 import static java.lang.invoke.MethodHandles.lookup;
-import java.nio.charset.StandardCharsets;
 import org.slf4j.Logger;
-import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
-
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class StdlibTest extends JniCTest {
-
+public class jstdlibTest extends JniCTest {
 
     private static final Logger logger = getLogger(lookup().lookupClass());
-
 
     @Test
     public static void EXIT_FAILURE() {
 
-        logger.debug("EXIT_FAILURE: {}", Stdlib.EXIT_FAILURE);
+        logger.debug("EXIT_FAILURE: {}", jstdlib.EXIT_FAILURE);
     }
-
 
     @Test
     public static void EXIT_SUCCESS() {
 
-        logger.debug("EXIT_SUCCESS: {}", Stdlib.EXIT_SUCCESS);
+        logger.debug("EXIT_SUCCESS: {}", jstdlib.EXIT_SUCCESS);
     }
-
 
     @Test
     public static void RAND_MAX() {
 
-        logger.debug("RAND_MAX: {}", Stdlib.RAND_MAX);
+        logger.debug("RAND_MAX: {}", jstdlib.RAND_MAX);
     }
-
 
     @Test(enabled = false)
     public static void abort() {
 
-        Stdlib.abort();
+        jstdlib.abort();
 
     }
-
 
     @Test(enabled = true)
     public static void getenv() {
 
         final byte[] name = new byte[]{'P', 'A', 'T', 'H', '\0'};
-        final String value = Stdlib.getenv(name);
+        final String value = jstdlib.getenv(name);
         logger.debug("PATH: {}", value);
     }
-
 
     @Test(enabled = true)
     public static void rand() {
 
-        final int rand = Stdlib.rand();
+        final int rand = jstdlib.rand();
         logger.debug("rand: {}", rand);
     }
-
 
     @Test(enabled = true)
     public static void srand() {
 
-        Stdlib.srand(System.currentTimeMillis());
+        jstdlib.srand(System.currentTimeMillis());
     }
-
 
     @Test(enabled = true)
     public static void system() {
 
-        Stdlib.system(new byte[]{'l', 's', '\0'});
+        jstdlib.system(new byte[]{'l', 's', '\0'});
     }
 
-
 }
-

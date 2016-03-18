@@ -13,22 +13,18 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+package com.github.jinahya.jni.c;
 
-
-package com.github.jinahya.jnic;
-
-
+import com.github.jinahya.jni.c.jstring;
+import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-import org.testng.annotations.Test;
-
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class JniStringTest extends JniCTest {
-
+public class jstringTest extends JniCTest {
 
     @Test(enabled = true)
     public static void strcat() {
@@ -36,13 +32,12 @@ public class JniStringTest extends JniCTest {
         final byte[] dst = new byte[]{0x41, 0x42, 0x00, 0x00, 0x00};
         final byte[] src = new byte[]{0x61, 0x62, 0x00};
 
-        final byte[] cat = JniString.strcat(dst, src);
+        final byte[] cat = jstring.strcat(dst, src);
 
         for (int i = 0; i < src.length; i++) {
             assertEquals(dst[2 + i], src[i]);
         }
     }
-
 
     @Test(enabled = true)
     public static void strcpy() {
@@ -51,7 +46,7 @@ public class JniStringTest extends JniCTest {
         final byte[] src = new byte[]{0x61, 0x62, 0x00};
 
         assertTrue(dst.length >= src.length);
-        final byte[] cpy = JniString.strcpy(dst, src);
+        final byte[] cpy = jstring.strcpy(dst, src);
 
         for (int i = 0; i < src.length; i++) {
             assertEquals(dst[i], src[i]);
@@ -59,6 +54,4 @@ public class JniStringTest extends JniCTest {
 
     }
 
-
 }
-

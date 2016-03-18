@@ -1,4 +1,4 @@
-#include "com_github_jinahya_jni_c_Stdlib.h"
+#include "com_github_jinahya_jni_c_jstdlib.h"
 #include <jni.h>
 #include <stdio.h>
 #include <stdlib.h>

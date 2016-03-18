@@ -13,125 +13,108 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.github.jinahya.jni.c;
 
-
-package com.github.jinahya.jnic;
-
-
-import com.github.jinahya.jnic.JniCTest;
+import com.github.jinahya.jni.c.jstdio;
+import com.github.jinahya.jni.c.JniCTest;
 import static java.lang.invoke.MethodHandles.lookup;
 import org.slf4j.Logger;
-import static org.slf4j.LoggerFactory.getLogger;
 import org.testng.annotations.Test;
-
+import static org.slf4j.LoggerFactory.getLogger;
 
 /**
  *
  * @author Jin Kwon &lt;jinahya_at_gmail.com&gt;
  */
-public class JniStdioTest extends JniCTest {
-
+public class jstdioTest extends JniCTest {
 
     @Test(enabled = true)
     public static void _IOFBF() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("_IOFBF: {}", JniStdio._IOFBF);
+        logger.debug("_IOFBF: {}", jstdio._IOFBF);
     }
-
 
     @Test(enabled = true)
     public static void _IOLBF() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("_IOLBF: {}", JniStdio._IOLBF);
+        logger.debug("_IOLBF: {}", jstdio._IOLBF);
     }
-
 
     @Test(enabled = true)
     public static void _IONBF() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("_IONBF: {}", JniStdio._IONBF);
+        logger.debug("_IONBF: {}", jstdio._IONBF);
     }
-
 
     @Test(enabled = true)
     public static void BUFSIZ() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("BUFSIZ: {}", JniStdio.BUFSIZ);
+        logger.debug("BUFSIZ: {}", jstdio.BUFSIZ);
     }
-
 
     @Test(enabled = true)
     public static void EOF() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("EOF: {}", JniStdio.EOF());
+        logger.debug("EOF: {}", jstdio.EOF());
     }
-
 
     @Test(enabled = true)
     public static void FILENAME_MAX() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("FILENAME_MAX: {}", JniStdio.FILENAME_MAX);
+        logger.debug("FILENAME_MAX: {}", jstdio.FILENAME_MAX);
     }
-
 
     @Test(enabled = true)
     public static void FOPEN_MAX() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("FOPEN_MAX: {}", JniStdio.FOPEN_MAX);
+        logger.debug("FOPEN_MAX: {}", jstdio.FOPEN_MAX);
     }
-
 
     @Test(enabled = true)
     public static void SEEK_SET() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("SEEK_SET: {}", JniStdio.SEEK_SET);
+        logger.debug("SEEK_SET: {}", jstdio.SEEK_SET);
     }
-
 
     @Test(enabled = true)
     public static void SEEK_CUR() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("SEEK_CUR: {}", JniStdio.SEEK_CUR);
+        logger.debug("SEEK_CUR: {}", jstdio.SEEK_CUR);
     }
-
 
     @Test(enabled = true)
     public static void SEEK_END() {
 
         final Logger logger = getLogger(lookup().lookupClass());
 
-        logger.debug("SEEK_END: {}", JniStdio.SEEK_END);
+        logger.debug("SEEK_END: {}", jstdio.SEEK_END);
     }
-
 
     @Test(enabled = true)
     public static void puts() {
 
         final byte[] src = new byte[]{0x40, 0x41, 0x00};
-        final int result = JniStdio.puts(src);
+        final int result = jstdio.puts(src);
     }
-
 
     private transient final Logger logger = getLogger(lookup().lookupClass());
 
-
 }
-

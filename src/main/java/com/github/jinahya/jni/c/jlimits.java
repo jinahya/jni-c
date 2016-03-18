@@ -13,114 +13,78 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-
-
-package com.github.jinahya.jnic;
-
+package com.github.jinahya.jni.c;
 
 import java.math.BigInteger;
-
 
 /**
  *
  * @author Jin Kwon &lt;onacit at gmail.com&gt;
  */
-public class JniLimits {
-
+public class jlimits {
 
     static native int CHAR_BIT();
 
-
     public static final int CHAR_BIT = CHAR_BIT();
-
 
     static native int MB_LEN_MAX();
 
-
     public static final int MB_LEN_MAX = MB_LEN_MAX();
-
 
     static native int CHAR_MIN();
 
-
     public static final int CHAR_MIN = CHAR_MIN();
-
 
     static native int CHAR_MAX();
 
-
     public static final int CHAR_MAX = CHAR_MAX();
-
 
     static native int SCHAR_MIN();
 
-
     public static final int SCHAR_MIN = SCHAR_MIN();
-
 
     static native int SCHAR_MAX();
 
-
     public static final int SCHAR_MAX = SCHAR_MAX();
-
 
     static native int UCHAR_MAX();
 
-
     public static final int UCHAR_MAX = UCHAR_MAX();
-
 
     static native int SHRT_MIN();
 
-
     public static final int SHRT_MIN = SHRT_MIN();
-
 
     static native int SHRT_MAX();
 
-
     public static final int SHRT_MAX = SHRT_MAX();
-
 
     static native int USHRT_MAX();
 
-
     public static final int USHRT_MAX = USHRT_MAX();
-
 
     static native int INT_MIN();
 
-
     public static final int INT_MIN = INT_MIN();
-
 
     static native int INT_MAX();
 
-
     public static final int INT_MAX = INT_MAX();
-
 
     static native long UINT_MAX();
 
-
     public static final long UINT_MAX = UINT_MAX();
-
 
     static native long LONG_MIN();
 
-
     public static final long LONG_MIN = LONG_MIN();
-
 
     static native long LONG_MAX();
 
-
     public static final long LONG_MAX = LONG_MAX();
-
 
     // --------------------------------------------------------------- ULONG_MAX
     static native byte[] ULONG_MAX_BYTES();
-
 
     static BigInteger ULONG_MAX() {
 
@@ -129,14 +93,11 @@ public class JniLimits {
         return bytes == null ? null : new BigInteger(bytes);
     }
 
-
     public static final BigInteger ULONG_MAX = ULONG_MAX();
-
 
     // --------------------------------------------------------------- LLONG_MIN
     //static native boolean LLONG_MIN(byte[] bytes);
     static native byte[] LLONG_MIN_BYTES();
-
 
     static BigInteger LLONG_MIN() {
 
@@ -145,14 +106,11 @@ public class JniLimits {
         return bytes == null ? null : new BigInteger(-1, bytes);
     }
 
-
     public static final BigInteger LLONG_MIN = LLONG_MIN();
-
 
     // --------------------------------------------------------------- LLONG_MAX
     //static native boolean LLONG_MAX(byte[] bytes);
     static native byte[] LLONG_MAX_BYTES();
-
 
     static BigInteger LLONG_MAX() {
 
@@ -161,23 +119,17 @@ public class JniLimits {
         return bytes == null ? null : new BigInteger(1, bytes);
     }
 
-
     public static final BigInteger LLONG_MAX = LLONG_MAX();
-
 
     // -------------------------------------------------------------- ULLONG_MAX
     //static native boolean ULLONG_MAX(byte[] bytes);
     static native byte[] ULLONG_MAX_BYTES();
-
 
     static BigInteger ULLONG_MAX() {
         final byte[] bytes = ULLONG_MAX_BYTES();
         return bytes == null ? null : new BigInteger(1, bytes);
     }
 
-
     public static final BigInteger ULLONG_MAX = ULLONG_MAX();
 
-
 }
-
